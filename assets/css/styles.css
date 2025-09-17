@@ -95,3 +95,9 @@ nav a,
 /* Typography helpers */
 .h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 12px; }
 .h
+
+/* Force hero logo/mark centered */
+.hero-mark {
+  display: block;
+  margin: 0 auto 12px;
+}
