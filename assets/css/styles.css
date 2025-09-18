@@ -207,3 +207,103 @@ html, body {
    TYPOGRAPHY HELPERS
 ====================================================== */
 .h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 12px; }
+
+
+
+/* ===== NAV POLISH HOTFIX ===== */
+
+/* Header spacing */
+.site-header { padding-top: 8px; padding-bottom: 4px; }
+
+/* Keep the logo centered and sized nicely */
+.header-brand { display:flex; justify-content:center; align-items:center; padding: 8px 16px 4px; }
+.header-brand img { max-width: clamp(200px, 32vw, 360px); height:auto; margin:0 auto; }
+
+/* Make the nav a proper horizontal menu */
+.primary-nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:28px;
+  padding: 6px 16px 14px;
+  font: 600 16px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+
+/* Normalize all link states so they don't go purple/underlined */
+.primary-nav a,
+.primary-nav a:link,
+.primary-nav a:visited{
+  color: var(--csc-navy);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display:inline-block;
+}
+
+/* Hover and active feel like a subtle pill */
+.primary-nav a:hover,
+.primary-nav a:focus{
+  background: rgba(43,60,127,.08);
+  outline: none;
+}
+.primary-nav a[aria-current="page"]{
+  background: rgba(43,60,127,.12);
+}
+
+/* Mobile: keep on one line, scroll if tight */
+@media (max-width:640px){
+  .primary-nav{
+    gap:18px;
+    font-size:15px;
+    white-space:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .primary-nav::-webkit-scrollbar{ display:none; }
+}
+/* ===== FINAL NAV FIX: nuke inherited link styles and restyle ===== */
+.site-header nav.primary-nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:28px;
+  padding:8px 16px 14px;
+  font:600 16px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--csc-navy);
+}
+
+/* Reset every link property so no other stylesheet wins */
+.site-header nav.primary-nav > a{
+  all: unset;                    /* wipe underline/purple/visited etc */
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  color:var(--csc-navy);
+}
+
+/* Hover, focus, current page */
+.site-header nav.primary-nav > a:hover,
+.site-header nav.primary-nav > a:focus{ 
+  background:rgba(43,60,127,.08);
+  outline:none;
+}
+.site-header nav.primary-nav > a[aria-current="page"]{
+  background:rgba(43,60,127,.12);
+}
+
+/* Absolute override for any stubborn global a:link/a:visited rules */
+.site-header nav.primary-nav > a:link,
+.site-header nav.primary-nav > a:visited{
+  color:var(--csc-navy) !important;
+  text-decoration:none !important;
+}
+
+/* Mobile: single line with horizontal scroll if tight */
+@media (max-width:640px){
+  .site-header nav.primary-nav{ gap:18px; font-size:15px; white-space:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .site-header nav.primary-nav::-webkit-scrollbar{ display:none; }
+}
+
+
