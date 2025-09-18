@@ -29,11 +29,7 @@ a{ color:inherit; }
   filter:brightness(0) saturate(100%) invert(8%) sepia(18%) saturate(2380%) hue-rotate(204deg) brightness(92%) contrast(93%);
 }
 
-/* horizontal rules around logo, optional but pretty */
-.logo::before,.logo::after{
-  content:""; display:inline-block; vertical-align:middle;
-  width:70px; height:2px; background:var(--blue); opacity:.7; margin:0 14px;
-}
+
 
 /* nav that matches your HTML: .site-nav */
 .site-nav{
