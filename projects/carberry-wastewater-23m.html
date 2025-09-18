@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Carberry, MB — Wastewater Treatment Plant ($23M) — Construction Services Consulting, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Carberry, Manitoba wastewater treatment plant, owner’s representative and CM support.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/projects/">Projects</a> <span>/</span>
+      <span>Carberry Wastewater ($23M)</span>
+    </nav>
+
+    <article class="project">
+      <header class="project-hero">
+        <h1>Carberry, Manitoba — Wastewater Treatment Plant</h1>
+        <p class="muted">$23M total project value</p>
+      </header>
+
+      <section class="project-meta grid two">
+        <div class="card">
+          <h2>Overview</h2>
+          <p>
+            Municipal wastewater treatment plant program with collection upgrades, process units, and lagoon improvements.
+            CSC provided owner’s representative services, schedule and budget controls, and coordination with design and trade partners through procurement and construction.
+          </p>
+          <ul class="bullets">
+            <li>Role: Owner’s Representative, CM support</li>
+            <li>Market: Water and Wastewater</li>
+            <li>Location: Carberry, Manitoba, Canada</li>
+            <li>Status: Completed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <ul class="kv">
+            <li><span>Budget</span><b>$23,000,000</b></li>
+            <li><span>Delivery</span><b>Design, bid, build with CM support</b></li>
+            <li><span>Duration</span><b>18–24 months</b></li>
+            <li><span>Client</span><b>Municipal owner</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <div class="thumb-grid">
+          <!-- Images will auto-fallback to placeholder.jpg if missing per site-wide logic -->
+          <a class="thumb" href="/assets/img/projects/carberry-wastewater-23m/1.jpg">
+            <img src="/assets/img/projects/carberry-wastewater-23m/1.jpg" alt="Process basins">
+          </a>
+          <a class="thumb" href="/assets/img/projects/carberry-wastewater-23m/2.jpg">
+            <img src="/assets/img/projects/carberry-wastewater-23m/2.jpg" alt="Headworks">
+          </a>
+          <a class="thumb" href="/assets/img/projects/carberry-wastewater-23m/3.jpg">
+            <img src="/assets/img/projects/carberry-wastewater-23m/3.jpg" alt="Site civil">
+          </a>
+        </div>
+      </section>
+
+      <section class="project-scope grid two">
+        <div class="card">
+          <h2>Scope</h2>
+          <ul class="bullets">
+            <li>Program and procurement strategy</li>
+            <li>Schedule development and pull-plan sessions</li>
+            <li>Trades prequalification and bid coordination</li>
+            <li>Submittals, RFIs, and quality tracking workflows</li>
+            <li>Startup planning and commissioning coordination</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Key outcomes</h2>
+          <ul class="bullets">
+            <li>Risk register and change control held within target budget</li>
+            <li>Critical path tracked from excavation through startup</li>
+            <li>Operator training and O&amp;M turnover package delivered</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-location">
+        <h2>Location</h2>
+        <div class="map-cta">
+          <button class="btn" id="loadMap">Show Map</button>
+          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
+        </div>
+        <div id="mapSlot"></div>
+
+        <script>
+          // Click-to-load Maps (planned API worker endpoint)
+          const btn = document.getElementById('loadMap');
+          const slot = document.getElementById('mapSlot');
+          btn?.addEventListener('click', () => {
+            btn.disabled = true; btn.textContent = 'Loading…';
+
+            // TODO: replace loc with precise coordinates when available
+            // Carberry, Manitoba approximate center
+            const loc = '49.8688,-99.3607';
+
+            fetch(`/api/map?mode=place&q=Carberry%2C%20MB&loc=${encodeURIComponent(loc)}`)
+              .then(r => r.text())
+              .then(html => {
+                slot.innerHTML = html;
+              })
+              .catch(() => {
+                slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>';
+              });
+          });
+        </script>
+      </section>
+
+      <footer class="project-footer">
+        <a class="btn" href="/projects/">← Back to all projects</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
+      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
