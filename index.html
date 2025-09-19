@@ -5,7 +5,7 @@
   <title>Construction Services Consulting, Inc. (CSC)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CSC plans, coordinates, and delivers complex projects on time, on budget, and to spec.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=9">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=8">
 </head>
 <body>
  <header class="site-header">
@@ -85,26 +85,13 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-  </footer>
+  
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<div id="footer-slot"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('partials/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var year = new Date().getFullYear();
-      html = html.replace('id="footer-year"></span>', 'id="footer-year">' + year + '</span>');
-      var slot = document.getElementById('footer-slot');
-      if (slot) slot.innerHTML = html;
-    })
-    .catch(function(){});
-});
-</script>
-</body>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer></body>
 </html>

@@ -4,14 +4,8 @@
   <meta charset="utf-8">
   <title>Contact — Construction Services Consulting, Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Email CSC for fast help with owner’s rep and construction management. Typical reply within one business day.">
-  <!-- Simple share previews -->
-  <meta property="og:title" content="Contact CSC">
-  <meta property="og:description" content="Email us and we will respond quickly.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://csc-site.pages.dev/contact">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=7">
-  <link rel="icon" href="/assets/img/logo-short.svg">
+  <meta name="description" content="Contact Construction Services Consulting, Inc.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -27,113 +21,38 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero hero--contact" aria-labelledby="contact-heading">
+    <section class="hero">
       <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="56" aria-hidden="true">
-        <h1 id="contact-heading">Contact CSC</h1>
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="CSC mark" height="48">
+        <h1>Contact CSC</h1>
         <p class="lede">Email us and we will respond quickly.</p>
-
-        <div class="cta-row">
-          <a class="btn-primary"
-             href="mailto:info@intl-cscinc.com?subject=New%20project%20inquiry%20from%20website&body=Hello%20CSC,%0A%0AProject%20location:%0ADesired%20schedule:%0AUtilities/permits/constraints:%0AScope%20summary:%0ABudget%20range:%0A%0AThanks!">
-            Email info@intl-cscinc.com
-          </a>
-          <button class="btn btn-ghost" id="copyEmail" type="button" aria-label="Copy email address">
-            Copy email
-          </button>
-        </div>
-        <p class="tiny muted">Typical reply within 1 business day.</p>
       </div>
     </section>
 
-    <!-- INFO GRID -->
-    <section class="section" aria-labelledby="more-info">
+    <section class="section">
       <div class="container">
-        <h2 id="more-info" class="sr-only" style="position:absolute;left:-9999px;">More information</h2>
-        <div class="card-grid card-grid--three">
+        <div class="card-grid">
           <article class="card">
             <h3>Email</h3>
             <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-            <p class="muted">We prefer email for first contact. No phone number is listed publicly.</p>
+            <p>We prefer email for first contact. No phone number is listed publicly.</p>
           </article>
-
           <article class="card">
             <h3>Project inquiries</h3>
-            <ul class="checklist">
-              <li>Location and desired schedule</li>
-              <li>Utilities or permitting constraints</li>
-              <li>High-level scope and budget range</li>
-              <li>Operations to protect during work</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>What we do</h3>
-            <p class="muted">Owner’s rep and CM support for logistics, food and beverage, clean rooms, subdivisions, and high security work.</p>
-            <p><a class="btn-link" href="/services.html">See services →</a></p>
+            <p>Include location, desired schedule, and any constraints on utilities, permitting, or operations.</p>
           </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Copy email helper
-    (function () {
-      const btn = document.getElementById('copyEmail');
-      if (!btn || !navigator.clipboard) return;
-      btn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText('info@intl-cscinc.com');
-          const old = btn.textContent;
-          btn.textContent = 'Copied';
-          setTimeout(() => btn.textContent = old, 1200);
-        } catch {}
-      });
-    })();
-
-    // Structured data
-    const ld = {
-      "@context":"https://schema.org",
-      "@type":"Organization",
-      "name":"Construction Services Consulting, Inc.",
-      "url":"https://csc-site.pages.dev",
-      "logo":"https://csc-site.pages.dev/assets/img/logo-full.svg",
-      "contactPoint":[{
-        "@type":"ContactPoint",
-        "contactType":"customer support",
-        "email":"info@intl-cscinc.com",
-        "areaServed":"US"
-      }]
-    };
-    const s=document.createElement('script'); s.type='application/ld+json'; s.textContent=JSON.stringify(ld);
-    document.head.appendChild(s);
-  </script>
-<div id="footer-slot"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('partials/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var year = new Date().getFullYear();
-      html = html.replace('id="footer-year"></span>', 'id="footer-year">' + year + '</span>');
-      var slot = document.getElementById('footer-slot');
-      if (slot) slot.innerHTML = html;
-    })
-    .catch(function(){});
-});
-</script>
-</body>
+  
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer></body>
 </html>
-

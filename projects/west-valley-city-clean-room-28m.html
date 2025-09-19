@@ -110,7 +110,6 @@
           const slot = document.getElementById('mapSlot');
           btn?.addEventListener('click', () => {
             btn.disabled = true; btn.textContent = 'Loading…';
-            // Approximate West Valley City center coordinates
             const loc = '40.6916,-112.0011';
             fetch(`/api/map?mode=place&q=West%20Valley%20City%2C%20UT&loc=${encodeURIComponent(loc)}`)
               .then(r => r.text())
@@ -126,26 +125,12 @@
     </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  </footer>
-<div id="footer-slot"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('partials/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var year = new Date().getFullYear();
-      html = html.replace('id="footer-year"></span>', 'id="footer-year">' + year + '</span>');
-      var slot = document.getElementById('footer-slot');
-      if (slot) slot.innerHTML = html;
-    })
-    .catch(function(){});
-});
-</script>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
 </body>
 </html>

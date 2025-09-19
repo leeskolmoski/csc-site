@@ -62,7 +62,6 @@
       <section class="project-gallery">
         <h2>Gallery</h2>
         <div class="thumb-grid">
-          <!-- Images will auto-fallback to placeholder.jpg if missing per site-wide logic -->
           <a class="thumb" href="/assets/img/projects/carberry-wastewater-23m/1.jpg">
             <img src="/assets/img/projects/carberry-wastewater-23m/1.jpg" alt="Process basins">
           </a>
@@ -106,24 +105,15 @@
         <div id="mapSlot"></div>
 
         <script>
-          // Click-to-load Maps (planned API worker endpoint)
           const btn = document.getElementById('loadMap');
           const slot = document.getElementById('mapSlot');
           btn?.addEventListener('click', () => {
             btn.disabled = true; btn.textContent = 'Loading…';
-
-            // TODO: replace loc with precise coordinates when available
-            // Carberry, Manitoba approximate center
             const loc = '49.8688,-99.3607';
-
             fetch(`/api/map?mode=place&q=Carberry%2C%20MB&loc=${encodeURIComponent(loc)}`)
               .then(r => r.text())
-              .then(html => {
-                slot.innerHTML = html;
-              })
-              .catch(() => {
-                slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>';
-              });
+              .then(html => { slot.innerHTML = html; })
+              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; });
           });
         </script>
       </section>
@@ -134,26 +124,12 @@
     </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  </footer>
-<div id="footer-slot"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('partials/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var year = new Date().getFullYear();
-      html = html.replace('id="footer-year"></span>', 'id="footer-year">' + year + '</span>');
-      var slot = document.getElementById('footer-slot');
-      if (slot) slot.innerHTML = html;
-    })
-    .catch(function(){});
-});
-</script>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
 </body>
 </html>

@@ -223,6 +223,12 @@ x
             <p>$4M · Process production line (FM/UL/FDA).</p>
           </a>
 
+          <a class="thumb-card" href="/projects/irapuato-warehouse-15m.html">
+            <img src="/assets/img/projects/irapuato-warehouse-15m.jpg" alt="Irapuato warehouse" onerror="this.src='/assets/img/projects/placeholder.jpg'">
+            <h3>Irapuato, Mexico</h3>
+            <p>$15M · Distribution warehouse.</p>
+          </a>
+
           <a class="thumb-card" href="/projects/harbin-temp-controlled-6-7m.html">
             <img src="/assets/img/projects/harbin-temp-controlled-6-7m.jpg" alt="Harbin temp-controlled facility" onerror="this.src='/assets/img/projects/placeholder.jpg'">
             <h3>Harbin, China</h3>
@@ -337,26 +343,13 @@ x
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-  </footer>
+  
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<div id="footer-slot"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('partials/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var year = new Date().getFullYear();
-      html = html.replace('id="footer-year"></span>', 'id="footer-year">' + year + '</span>');
-      var slot = document.getElementById('footer-slot');
-      if (slot) slot.innerHTML = html;
-    })
-    .catch(function(){});
-});
-</script>
-</body>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer></body>
 </html>

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>Services — Construction Services Consulting, Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CSC manages every stage of the project lifecycle: planning, design coordination, construction oversight, and final commissioning.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=9">
+  <meta name="description" content="Design and pre-construction, construction oversight, and post-construction commissioning and closeout.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -22,89 +22,61 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero hero--contact" aria-labelledby="services-heading">
+    <section class="hero">
       <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="CSC mark" height="56">
-        <h1 id="services-heading">Services and Roles</h1>
-        <p class="lede">
-          We support the entire project lifecycle. From early planning and design management to construction oversight and final commissioning, we ensure projects are safe, compliant, on schedule, and within budget.
-        </p>
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="CSC mark" height="48">
+        <h1>Services and Roles</h1>
+        <p class="lede">We support the full project lifecycle, from program management and due diligence to commissioning and handover.</p>
       </div>
     </section>
 
     <!-- PHASE CARDS -->
     <section class="section">
-      <div class="container card-grid">
-        
-        <article class="card">
-          <h3>Design and Pre-construction</h3>
-          <p>
-            Early decisions save the most money. We manage site investigations, due diligence, and concept design to set each project on the right path. 
-            Our team coordinates with architects, engineers, and municipal agencies so plans are complete and permits are secured before work begins.
-          </p>
-          <ul class="checklist">
-            <li>Program management and feasibility studies</li>
-            <li>Concept design, estimating, and scheduling</li>
-            <li>Architect and engineer selection and contract negotiation</li>
-            <li>Permit and approval coordination with municipalities</li>
-            <li>Bidder pre-qualification, procurement, and contractor negotiations</li>
-          </ul>
-        </article>
+      <div class="container">
+        <div class="card-grid">
+          <article class="card">
+            <h3>Design and Pre-construction</h3>
+            <ul class="checklist">
+              <li>Program management, site investigation, due diligence.</li>
+              <li>Concept design, estimating, and scheduling.</li>
+              <li>Select and negotiate with architects and engineers for the owner.</li>
+              <li>Coordinate the design team to scope, schedule, and budget.</li>
+              <li>Work with municipal agencies for required permits and approvals.</li>
+              <li>Pre-qualify bidders, run procurement, assist with contractor negotiations.</li>
+            </ul>
+          </article>
 
-        <article class="card">
-          <h3>Construction</h3>
-          <p>
-            During construction, we represent the owner's interests at all times. 
-            We actively monitor quality control, verify that safety procedures are followed, and ensure any deficiencies are corrected quickly. 
-            Our team tracks progress against the schedule, reviews contractor pay applications, and provides leadership with clear monthly updates.
-          </p>
-          <ul class="checklist">
-            <li>GC procurement participation and on-site oversight</li>
-            <li>Continuous quality control monitoring</li>
-            <li>Safety procedure checks and follow-up on corrections</li>
-            <li>Review and approval of pay applications and expenditures</li>
-            <li>Monthly cost tracking and reporting</li>
-            <li>Coordination of tenant improvements and documentation</li>
-          </ul>
-        </article>
+          <article class="card">
+            <h3>Construction</h3>
+            <ul class="checklist">
+              <li>Participate in GC procurement and oversee on-site progress.</li>
+              <li>Ensure quality, safety, and schedule adherence.</li>
+              <li>Review and approve pay applications and expenditures.</li>
+              <li>Track monthly cost updates from the GC.</li>
+              <li>Coordinate tenant improvements and closeout documentation.</li>
+            </ul>
+          </article>
 
-        <article class="card">
-          <h3>Post-construction</h3>
-          <p>
-            Our work continues through closeout and beyond. 
-            We finalize contracts, commission systems, and train operations and maintenance staff so your facility performs as designed from day one.
-          </p>
-          <ul class="checklist">
-            <li>Contract closeout and turnover to operations</li>
-            <li>Building and equipment commissioning</li>
-            <li>Training for management and maintenance teams</li>
-          </ul>
-        </article>
-
+          <article class="card">
+            <h3>Post-construction</h3>
+            <ul class="checklist">
+              <li>Contract closeout and turnover to operations.</li>
+              <li>Commission building and equipment.</li>
+              <li>Train management and building maintenance personnel.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-  </footer>
+  
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<div id="footer-slot"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('partials/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var year = new Date().getFullYear();
-      html = html.replace('id="footer-year"></span>', 'id="footer-year">' + year + '</span>');
-      var slot = document.getElementById('footer-slot');
-      if (slot) slot.innerHTML = html;
-    })
-    .catch(function(){});
-});
-</script>
-</body>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer></body>
 </html>
