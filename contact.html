@@ -5,7 +5,7 @@
   <title>Contact — Construction Services Consulting, Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact Construction Services Consulting, Inc.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=5">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=6">
 </head>
 <body>
   <header class="site-header">
@@ -21,25 +21,50 @@
   </header>
 
   <main>
-    <section class="hero">
+    <!-- HERO -->
+    <section class="hero hero--contact" aria-labelledby="contact-heading">
       <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="CSC mark" height="48">
-        <h1>Contact CSC</h1>
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="56" aria-hidden="true">
+        <h1 id="contact-heading">Contact CSC</h1>
         <p class="lede">Email us and we will respond quickly.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary"
+             href="mailto:info@intl-cscinc.com?subject=New%20project%20inquiry%20from%20website&body=Hello%20CSC,%0A%0AProject%20location:%0ADesired%20schedule:%0AUtilities/permits/constraints:%0AScope%20summary:%0ABudget%20range:%0A%0AThanks!">
+            Email info@intl-cscinc.com
+          </a>
+          <button class="btn btn-ghost" id="copyEmail" type="button" aria-label="Copy email address">
+            Copy email
+          </button>
+        </div>
+        <p class="tiny muted">Typical reply within 1 business day.</p>
       </div>
     </section>
 
+    <!-- INFO GRID -->
     <section class="section">
       <div class="container">
-        <div class="card-grid">
+        <div class="card-grid card-grid--three">
           <article class="card">
             <h3>Email</h3>
             <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-            <p>We prefer email for first contact. No phone number is listed publicly.</p>
+            <p class="muted">We prefer email for first contact. No phone number is listed publicly.</p>
           </article>
+
           <article class="card">
             <h3>Project inquiries</h3>
-            <p>Include location, desired schedule, and any constraints on utilities, permitting, or operations.</p>
+            <ul class="checklist">
+              <li>Location and desired schedule</li>
+              <li>Utilities or permitting constraints</li>
+              <li>High-level scope & budget range</li>
+              <li>Operations to protect during work</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>What we do</h3>
+            <p class="muted">Owner’s rep and CM support for logistics, food & beverage, clean rooms, subdivisions, and high security work.</p>
+            <p><a class="btn btn-link" href="/services.html">See services →</a></p>
           </article>
         </div>
       </div>
@@ -52,6 +77,24 @@
       <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Copy email helper
+    (function () {
+      const btn = document.getElementById('copyEmail');
+      if (!btn || !navigator.clipboard) return;
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('info@intl-cscinc.com');
+          const old = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(() => btn.textContent = old, 1200);
+        } catch {}
+      });
+    })();
+  </script>
 </body>
 </html>
