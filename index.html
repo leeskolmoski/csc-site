@@ -2,98 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Construction Services Consulting, Inc. (CSC)</title>
+  <title>Construction Services Consulting, Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CSC plans, coordinates, and delivers complex projects on time, on budget, and to spec.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=8">
+  <meta name="description" content="Two partners, six decades of experience. We plan, coordinate, and deliver complex projects on time, within budget, and to spec.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=9">
 </head>
 <body>
- <header class="site-header">
-  <div class="container">
-    <!-- Big CSC Logo -->
-    <a class="logo" href="/">
-      <img src="/assets/img/logo-short.svg" alt="CSC" height="36">
-    </a>
-    <!-- Tagline under logo -->
-    <p class="logo-tagline">CONSTRUCTION SERVICES CONSULTING</p>
-
-    <!-- Navigation -->
-    <nav class="site-nav" aria-label="Main">
-      <a href="/services.html">Services</a>
-      <a href="/about.html">About</a>
-      <a href="/projects/">Projects</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero hero--contact" aria-labelledby="hero-heading">
       <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="CSC mark" height="56">
-        <h1>Construction Services Consulting, Inc.</h1>
-        <p class="lede">Two partners, six decades of experience. We plan, coordinate, and deliver complex projects on time, on budget, and to spec.</p>
-        <div class="hero-actions">
-          <a class="btn" href="/services.html">What we do</a>
-          <a class="btn btn-secondary" href="/about.html">How we work</a>
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="56" aria-hidden="true">
+        <h1 id="hero-heading">Construction Services Consulting, Inc.</h1>
+        <p class="lede">
+          Two partners, six decades of experience. We plan, coordinate, and deliver complex projects on time, within budget, and to spec.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="/services.html">What we do</a>
+          <a class="btn-ghost" href="/about.html">How we work</a>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES CARDS -->
-    <section class="section">
+    <!-- SERVICES SUMMARY -->
+    <section class="section" aria-labelledby="svc-heading">
       <div class="container">
-        <h2>Our Services</h2>
+        <h2 id="svc-heading">Our Services</h2>
+
         <div class="card-grid">
           <article class="card">
             <h3>Pre-construction</h3>
-            <p>Program management, site due diligence, conceptual design, estimates and schedules, permitting strategy.</p>
+            <p>
+              Program management, site due diligence, conceptual design, estimates and schedules, permitting strategy.
+            </p>
           </article>
+
           <article class="card">
             <h3>Construction</h3>
-            <p>GC procurement, on-site progress monitoring, quality and safety oversight, pay app review, cost updates.</p>
+            <p>
+              GC procurement, on-site progress monitoring, quality and safety oversight, pay app review, cost updates.
+            </p>
           </article>
+
           <article class="card">
             <h3>Post-construction</h3>
-            <p>Commissioning, training for operations and maintenance, closeout documentation and handover.</p>
+            <p>
+              Commissioning, training for operations and maintenance, closeout documentation and handover.
+            </p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- KEYS -->
-    <section class="section bg-alt">
-      <div class="container">
-        <h2>Keys to a successful project</h2>
-        <ul>
-          <li>Define Scope, Schedule, Quality, Budget up front.</li>
-          <li>Do 80 percent of the work in pre-construction to control cost and change orders.</li>
-          <li>Build it on paper first, then execute in the field with discipline.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT TEASER -->
-    <section class="section">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email us at <a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a>. No phone number is listed by design.</p>
-        <p><a class="btn btn-secondary" href="/contact.html">Open contact page</a></p>
       </div>
     </section>
   </main>
 
-  
+  <!-- Footer (small, single line, auto year) -->
+  <footer class="site-footer site-footer--small">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-    <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
-
 </body>
 </html>
