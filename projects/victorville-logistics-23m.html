@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Victorville, CA — Logistics Facility ($23M) — Construction Services Consulting, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Victorville logistics facility with cross-dock capability and expanded yard. Owner’s rep and CM support.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/projects/">Projects</a> <span>/</span>
+      <span>Victorville Logistics ($23M)</span>
+    </nav>
+
+    <article class="project">
+      <header class="project-hero">
+        <h1>Victorville, California — Logistics Facility</h1>
+        <p class="muted">$23M total project value</p>
+      </header>
+
+      <section class="project-meta grid two">
+        <div class="card">
+          <h2>Overview</h2>
+          <p>
+            New-build logistics facility configured for high-throughput distribution with cross-dock potential,
+            expanded trailer parking, security improvements, and site circulation upgrades. CSC provided owner’s
+            representative services and construction management support through preconstruction, bid, build, and turnover.
+          </p>
+          <ul class="bullets">
+            <li>Role: Owner’s Representative, CM support</li>
+            <li>Market: Logistics and Distribution</li>
+            <li>Location: Victorville, California, USA</li>
+            <li>Status: Completed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <ul class="kv">
+            <li><span>Budget</span><b>$23,000,000</b></li>
+            <li><span>Delivery</span><b>Design, bid, build</b></li>
+            <li><span>Duration</span><b>14–16 months</b></li>
+            <li><span>Program</span><b>High-bay warehouse, docks, yard expansion</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <div class="thumb-grid">
+          <a class="thumb" href="/assets/img/projects/victorville-logistics-23m/1.jpg">
+            <img src="/assets/img/projects/victorville-logistics-23m/1.jpg" alt="Warehouse exterior and dock positions">
+          </a>
+          <a class="thumb" href="/assets/img/projects/victorville-logistics-23m/2.jpg">
+            <img src="/assets/img/projects/victorville-logistics-23m/2.jpg" alt="Interior high-bay racking">
+          </a>
+          <a class="thumb" href="/assets/img/projects/victorville-logistics-23m/3.jpg">
+            <img src="/assets/img/projects/victorville-logistics-23m/3.jpg" alt="Trailer yard and circulation">
+          </a>
+        </div>
+      </section>
+
+      <section class="project-scope grid two">
+        <div class="card">
+          <h2>Scope</h2>
+          <ul class="bullets">
+            <li>Preconstruction planning and bid phase coordination</li>
+            <li>Trade buyout and long lead materials tracking</li>
+            <li>Dock equipment, paving, fencing, and lighting</li>
+            <li>MEP distribution and low voltage integration</li>
+            <li>Commissioning and turnover sequencing</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Key outcomes</h2>
+          <ul class="bullets">
+            <li>Throughput increased with optimized dock layout</li>
+            <li>Yard capacity expanded with improved flow</li>
+            <li>Turnover completed with O&amp;M and training</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-location">
+        <h2>Location</h2>
+        <div class="map-cta">
+          <button class="btn" id="loadMap">Show Map</button>
+          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
+        </div>
+        <div id="mapSlot"></div>
+
+        <script>
+          const btn = document.getElementById('loadMap');
+          const slot = document.getElementById('mapSlot');
+          btn?.addEventListener('click', () => {
+            btn.disabled = true; btn.textContent = 'Loading…';
+            // Approximate Victorville center
+            const loc = '34.5361,-117.2912';
+            fetch(`/api/map?mode=place&q=Victorville%2C%20CA&loc=${encodeURIComponent(loc)}`)
+              .then(r => r.text())
+              .then(html => { slot.innerHTML = html; })
+              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; })
+              .finally(() => { btn.disabled = false; btn.textContent = 'Show Map'; });
+          });
+        </script>
+      </section>
+
+      <footer class="project-footer">
+        <a class="btn" href="/projects/">← Back to all projects</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
+      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
