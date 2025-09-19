@@ -120,9 +120,15 @@
         </script>
       </section>
 
-      <footer class="project-footer">
-        <a class="btn" href="/projects/">← Back to all projects</a>
-      </footer>
+      <div id="footer-slot"></div>
+<script>
+  (function(){
+    fetch('/partials/footer.html').then(function(r){ return r.text(); }).then(function(html){
+      var slot=document.getElementById('footer-slot');
+      if(slot){ slot.innerHTML = html; }
+    }).catch(function(){});
+  })();
+</script>
     </article>
   </main>
 

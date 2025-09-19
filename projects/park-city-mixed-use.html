@@ -74,12 +74,15 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
-    </div>
-  </footer>
+  <div id="footer-slot"></div>
+<script>
+  (function(){
+    fetch('/partials/footer.html').then(function(r){ return r.text(); }).then(function(html){
+      var slot=document.getElementById('footer-slot');
+      if(slot){ slot.innerHTML = html; }
+    }).catch(function(){});
+  })();
+</script>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
