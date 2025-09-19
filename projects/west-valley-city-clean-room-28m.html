@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>West Valley City, UT — Office & Clean Room ($28M) — Construction Services Consulting, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="West Valley City office and clean room facility, design-build support and owner’s representation.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/projects/">Projects</a> <span>/</span>
+      <span>West Valley City Office &amp; Clean Room ($28M)</span>
+    </nav>
+
+    <article class="project">
+      <header class="project-hero">
+        <h1>West Valley City, Utah — Office &amp; Clean Room Facility</h1>
+        <p class="muted">$28M total project value</p>
+      </header>
+
+      <section class="project-meta grid two">
+        <div class="card">
+          <h2>Overview</h2>
+          <p>
+            Multi-story office and ISO-class clean room facility in West Valley City. 
+            CSC provided comprehensive owner’s representative and construction management support, 
+            coordinating design-build delivery, procurement of specialty trades, and clean room commissioning.
+          </p>
+          <ul class="bullets">
+            <li>Role: Owner’s Representative, CM support</li>
+            <li>Market: Clean Room / High-Tech Manufacturing</li>
+            <li>Location: West Valley City, Utah, USA</li>
+            <li>Status: Completed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <ul class="kv">
+            <li><span>Budget</span><b>$28,000,000</b></li>
+            <li><span>Delivery</span><b>Design-Build</b></li>
+            <li><span>Duration</span><b>20 months</b></li>
+            <li><span>Client</span><b>Confidential high-tech manufacturer</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <div class="thumb-grid">
+          <a class="thumb" href="/assets/img/projects/west-valley-city-clean-room-28m/1.jpg">
+            <img src="/assets/img/projects/west-valley-city-clean-room-28m/1.jpg" alt="Clean room interior">
+          </a>
+          <a class="thumb" href="/assets/img/projects/west-valley-city-clean-room-28m/2.jpg">
+            <img src="/assets/img/projects/west-valley-city-clean-room-28m/2.jpg" alt="Mechanical systems">
+          </a>
+          <a class="thumb" href="/assets/img/projects/west-valley-city-clean-room-28m/3.jpg">
+            <img src="/assets/img/projects/west-valley-city-clean-room-28m/3.jpg" alt="Office buildout">
+          </a>
+        </div>
+      </section>
+
+      <section class="project-scope grid two">
+        <div class="card">
+          <h2>Scope</h2>
+          <ul class="bullets">
+            <li>Preconstruction planning and design-build alignment</li>
+            <li>Schedule and budget development with milestone tracking</li>
+            <li>Clean room classification requirements coordination</li>
+            <li>Mechanical, electrical, and process systems integration</li>
+            <li>Startup, commissioning, and validation oversight</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Key outcomes</h2>
+          <ul class="bullets">
+            <li>ISO clean room certified and turned over on schedule</li>
+            <li>Complex HVAC and filtration systems integrated successfully</li>
+            <li>Office and support spaces coordinated with lab operations</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-location">
+        <h2>Location</h2>
+        <div class="map-cta">
+          <button class="btn" id="loadMap">Show Map</button>
+          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
+        </div>
+        <div id="mapSlot"></div>
+
+        <script>
+          const btn = document.getElementById('loadMap');
+          const slot = document.getElementById('mapSlot');
+          btn?.addEventListener('click', () => {
+            btn.disabled = true; btn.textContent = 'Loading…';
+            // Approximate West Valley City center coordinates
+            const loc = '40.6916,-112.0011';
+            fetch(`/api/map?mode=place&q=West%20Valley%20City%2C%20UT&loc=${encodeURIComponent(loc)}`)
+              .then(r => r.text())
+              .then(html => { slot.innerHTML = html; })
+              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; });
+          });
+        </script>
+      </section>
+
+      <footer class="project-footer">
+        <a class="btn" href="/projects/">← Back to all projects</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
+      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
