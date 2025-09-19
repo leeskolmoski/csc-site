@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>San Bernardino, CA, Northrop Grumman ($27M) — Construction Services Consulting, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="San Bernardino Northrop Grumman facility improvements. Owner’s representation and CM support from preconstruction through turnover.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/projects/">Projects</a> <span>/</span>
+      <span>San Bernardino Northrop Grumman ($27M)</span>
+    </nav>
+
+    <article class="project">
+      <header class="project-hero">
+        <h1>San Bernardino, California, Northrop Grumman Facility</h1>
+        <p class="muted">$27M total project value</p>
+      </header>
+
+      <section class="project-meta grid two">
+        <div class="card">
+          <h2>Overview</h2>
+          <p>
+            Facility upgrades and tenant improvements supporting aerospace operations. Scope included secured office and lab areas,
+            building systems modernization, and site circulation improvements. CSC provided owner’s representative and CM support,
+            coordinating sensitive procurement, schedule controls, and turnover.
+          </p>
+          <ul class="bullets">
+            <li>Role: Owner’s Representative, CM support</li>
+            <li>Market: Aerospace, High Security</li>
+            <li>Location: San Bernardino, California, USA</li>
+            <li>Status: Completed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <ul class="kv">
+            <li><span>Budget</span><b>$27,000,000</b></li>
+            <li><span>Delivery</span><b>Design, bid, build with phased execution</b></li>
+            <li><span>Duration</span><b>18–20 months</b></li>
+            <li><span>Program</span><b>Secure offices, labs, building systems upgrades</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <div class="thumb-grid">
+          <a class="thumb" href="/assets/img/projects/san-bernardino-northrop-grumman-27m/1.jpg">
+            <img src="/assets/img/projects/san-bernardino-northrop-grumman-27m/1.jpg" alt="Secured entry and lobby">
+          </a>
+          <a class="thumb" href="/assets/img/projects/san-bernardino-northrop-grumman-27m/2.jpg">
+            <img src="/assets/img/projects/san-bernardino-northrop-grumman-27m/2.jpg" alt="Lab and support spaces">
+          </a>
+          <a class="thumb" href="/assets/img/projects/san-bernardino-northrop-grumman-27m/3.jpg">
+            <img src="/assets/img/projects/san-bernardino-northrop-grumman-27m/3.jpg" alt="MEP upgrades and controls">
+          </a>
+        </div>
+      </section>
+
+      <section class="project-scope grid two">
+        <div class="card">
+          <h2>Scope</h2>
+          <ul class="bullets">
+            <li>Preconstruction planning and procurement strategy</li>
+            <li>Trade vetting and restricted access coordination</li>
+            <li>Mechanical, electrical, controls modernization</li>
+            <li>Security systems and low voltage integration</li>
+            <li>Commissioning and turnover documentation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Key outcomes</h2>
+          <ul class="bullets">
+            <li>Phased work executed with operations maintained</li>
+            <li>Security protocols integrated into construction</li>
+            <li>Turnover accepted by tenant with zero rework</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-location">
+        <h2>Location</h2>
+        <div class="map-cta">
+          <button class="btn" id="loadMap">Show Map</button>
+          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
+        </div>
+        <div id="mapSlot"></div>
+
+        <script>
+          const btn = document.getElementById('loadMap');
+          const slot = document.getElementById('mapSlot');
+          btn?.addEventListener('click', () => {
+            btn.disabled = true; btn.textContent = 'Loading…';
+            // Approximate San Bernardino center
+            const loc = '34.1083,-117.2898';
+            fetch(`/api/map?mode=place&q=San%20Bernardino%2C%20CA&loc=${encodeURIComponent(loc)}`)
+              .then(r => r.text())
+              .then(html => { slot.innerHTML = html; })
+              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; })
+              .finally(() => { btn.disabled = false; btn.textContent = 'Show Map'; });
+          });
+        </script>
+      </section>
+
+      <footer class="project-footer">
+        <a class="btn" href="/projects/">← Back to all projects</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
+      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
