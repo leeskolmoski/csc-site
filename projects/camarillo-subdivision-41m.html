@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Camarillo, CA, Commercial Subdivision ($41M) — Construction Services Consulting, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Camarillo commercial subdivision. Owner’s representation and CM support across entitlement, backbone infrastructure, and pad delivery.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/projects/">Projects</a> <span>/</span>
+      <span>Camarillo Commercial Subdivision ($41M)</span>
+    </nav>
+
+    <article class="project">
+      <header class="project-hero">
+        <h1>Camarillo, California, Commercial Subdivision</h1>
+        <p class="muted">$41M total project value</p>
+      </header>
+
+      <section class="project-meta grid two">
+        <div class="card">
+          <h2>Overview</h2>
+          <p>
+            Master planned commercial subdivision with backbone utilities, arterial road improvements, grading and drainage,
+            and phased pad delivery for retail and light industrial users. CSC provided owner’s representative services and CM support
+            from entitlement through construction closeout.
+          </p>
+          <ul class="bullets">
+            <li>Role: Owner’s Representative, CM support</li>
+            <li>Market: Land Development, Commercial</li>
+            <li>Location: Camarillo, California, USA</li>
+            <li>Status: Completed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <ul class="kv">
+            <li><span>Budget</span><b>$41,000,000</b></li>
+            <li><span>Delivery</span><b>Design, bid, build</b></li>
+            <li><span>Duration</span><b>18–20 months</b></li>
+            <li><span>Program</span><b>Backbone utilities, roads, pad-ready sites</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <div class="thumb-grid">
+          <a class="thumb" href="/assets/img/projects/camarillo-subdivision-41m/1.jpg">
+            <img src="/assets/img/projects/camarillo-subdivision-41m/1.jpg" alt="Mass grading and utility installation">
+          </a>
+          <a class="thumb" href="/assets/img/projects/camarillo-subdivision-41m/2.jpg">
+            <img src="/assets/img/projects/camarillo-subdivision-41m/2.jpg" alt="Roadway improvements and curb">
+          </a>
+          <a class="thumb" href="/assets/img/projects/camarillo-subdivision-41m/3.jpg">
+            <img src="/assets/img/projects/camarillo-subdivision-41m/3.jpg" alt="Finished pad and drainage swale">
+          </a>
+        </div>
+      </section>
+
+      <section class="project-scope grid two">
+        <div class="card">
+          <h2>Scope</h2>
+          <ul class="bullets">
+            <li>Entitlement and environmental coordination</li>
+            <li>Mass grading, earthwork balance, and export planning</li>
+            <li>Backbone wet utilities, joint trench, and dry utilities</li>
+            <li>Stormwater detention, water quality, and outfall work</li>
+            <li>Arterial roadway widening, signals, and traffic control</li>
+            <li>Parcel mapping, pad certification, and turnover sequencing</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Key outcomes</h2>
+          <ul class="bullets">
+            <li>Pad certifications delivered per lease schedule</li>
+            <li>Stormwater compliance verified and accepted by AHJ</li>
+            <li>Off site improvements completed with minimal traffic impact</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-location">
+        <h2>Location</h2>
+        <div class="map-cta">
+          <button class="btn" id="loadMap">Show Map</button>
+          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
+        </div>
+        <div id="mapSlot"></div>
+
+        <script>
+          const btn = document.getElementById('loadMap');
+          const slot = document.getElementById('mapSlot');
+          btn?.addEventListener('click', () => {
+            btn.disabled = true; btn.textContent = 'Loading…';
+            // Approximate Camarillo center
+            const loc = '34.2164,-119.0376';
+            fetch(`/api/map?mode=place&q=Camarillo%2C%20CA&loc=${encodeURIComponent(loc)}`)
+              .then(r => r.text())
+              .then(html => { slot.innerHTML = html; })
+              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; });
+          });
+        </script>
+      </section>
+
+      <footer class="project-footer">
+        <a class="btn" href="/projects/">← Back to all projects</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
+      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
