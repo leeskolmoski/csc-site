@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>St. Louis, MO, Office & Test Kitchen ($5.2M) — Construction Services Consulting, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="St. Louis office buildout with culinary test kitchen and labs. Owner’s rep and CM support.">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <nav class="breadcrumb">
+      <a href="/">Home</a> <span>/</span>
+      <a href="/projects/">Projects</a> <span>/</span>
+      <span>St. Louis Office &amp; Test Kitchen ($5.2M)</span>
+    </nav>
+
+    <article class="project">
+      <header class="project-hero">
+        <h1>St. Louis, Missouri, Office and Test Kitchen</h1>
+        <p class="muted">$5.2M total project value</p>
+      </header>
+
+      <section class="project-meta grid two">
+        <div class="card">
+          <h2>Overview</h2>
+          <p>
+            Office buildout with culinary test kitchen, tasting lab, and flexible collaboration areas.
+            CSC served as owner’s representative and CM support from preconstruction through turnover,
+            coordinating MEP upgrades, food service equipment, and health department approvals.
+          </p>
+          <ul class="bullets">
+            <li>Role: Owner’s Representative, CM support</li>
+            <li>Market: Office, Food and Beverage R&amp;D</li>
+            <li>Location: St. Louis, Missouri, USA</li>
+            <li>Status: Completed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>At a glance</h2>
+          <ul class="kv">
+            <li><span>Budget</span><b>$5,200,000</b></li>
+            <li><span>Delivery</span><b>Design, bid, build</b></li>
+            <li><span>Duration</span><b>10–12 months</b></li>
+            <li><span>Program</span><b>Office, culinary test kitchen, tasting lab</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Gallery</h2>
+        <div class="thumb-grid">
+          <a class="thumb" href="/assets/img/projects/st-louis-office-test-kitchen-5-2m/1.jpg">
+            <img src="/assets/img/projects/st-louis-office-test-kitchen-5-2m/1.jpg" alt="Culinary test kitchen line">
+          </a>
+          <a class="thumb" href="/assets/img/projects/st-louis-office-test-kitchen-5-2m/2.jpg">
+            <img src="/assets/img/projects/st-louis-office-test-kitchen-5-2m/2.jpg" alt="Tasting lab and prep">
+          </a>
+          <a class="thumb" href="/assets/img/projects/st-louis-office-test-kitchen-5-2m/3.jpg">
+            <img src="/assets/img/projects/st-louis-office-test-kitchen-5-2m/3.jpg" alt="Flexible office collaboration space">
+          </a>
+        </div>
+      </section>
+
+      <section class="project-scope grid two">
+        <div class="card">
+          <h2>Scope</h2>
+          <ul class="bullets">
+            <li>Preconstruction planning and permit coordination</li>
+            <li>Food service equipment procurement and install</li>
+            <li>MEP upgrades, grease management, and ventilation</li>
+            <li>Finishes, acoustics, and flexible furniture planning</li>
+            <li>Commissioning and health department approvals</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Key outcomes</h2>
+          <ul class="bullets">
+            <li>Test kitchen validated for R&amp;D operations</li>
+            <li>Office and labs delivered with zero punch items</li>
+            <li>Turnover completed with O&amp;M and training</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-location">
+        <h2>Location</h2>
+        <div class="map-cta">
+          <button class="btn" id="loadMap">Show Map</button>
+          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
+        </div>
+        <div id="mapSlot"></div>
+
+        <script>
+          const btn = document.getElementById('loadMap');
+          const slot = document.getElementById('mapSlot');
+          btn?.addEventListener('click', () => {
+            btn.disabled = true; btn.textContent = 'Loading…';
+            // Approximate St. Louis center
+            const loc = '38.6270,-90.1994';
+            fetch(`/api/map?mode=place&q=St%20Louis%2C%20MO&loc=${encodeURIComponent(loc)}`)
+              .then(r => r.text())
+              .then(html => { slot.innerHTML = html; })
+              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; })
+              .finally(() => { btn.disabled = false; btn.textContent = 'Show Map'; });
+          });
+        </script>
+      </section>
+
+      <footer class="project-footer">
+        <a class="btn" href="/projects/">← Back to all projects</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> Construction Services Consulting, Inc.</p>
+      <p><a href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a></p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
