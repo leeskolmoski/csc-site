@@ -116,3 +116,19 @@ a{ color:inherit; }
   margin: 4px 0 8px;
   text-align: center;
 }
+
+/* --- Home hero CTA buttons and spacing --- */
+.cta-row { display:inline-flex; gap:.75rem; flex-wrap:wrap; justify-content:center; margin-top:1rem; }
+.btn-primary {
+  display:inline-block; padding:.75rem 1rem; border-radius:12px;
+  background:#2f67ff; color:#fff; border:1px solid transparent; text-decoration:none; font-weight:600;
+}
+.btn-primary:hover { filter:brightness(.95); }
+.btn-ghost {
+  display:inline-block; padding:.75rem 1rem; border-radius:12px;
+  background:#fff; border:1px solid #e6e6e6; text-decoration:none; font-weight:600;
+}
+.btn-ghost:hover { background:#f6f7fb; }
+
+/* --- Smaller, muted footer --- */
+.site-footer--small { font-size:.875rem; color:#666; border-top:1px solid #e6e6e6; text-align:center; padding:1.25rem 0; }
