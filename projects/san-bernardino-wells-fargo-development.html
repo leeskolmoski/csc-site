@@ -5,7 +5,7 @@
   <title>San Bernardino, California — Wells Fargo Development — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Wells Fargo Development in San Bernardino, California: high-security office support, dual parking structures, ground-up Panera Bread, retail shell, clean room TI, and misc. retail.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=16">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=17">
   <style>
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
     .gallery-grid img{width:100%;height:auto;border-radius:10px;border:1px solid #e6e6e6}
@@ -48,10 +48,10 @@
       <div class="container">
         <h2>Project Overview</h2>
         <p>
-          CSC provided comprehensive Owner’s Representative and design-build oversight for the San Bernardino Wells Fargo Development. 
-          The program encompassed delivery of a high-security office building, two cast-in-place parking structures, a ground-up Panera Bread, 
-          a multi-tenant retail shell, an $8.2M clean room tenant improvement, and miscellaneous retail units. 
-          Responsibilities included municipal permitting, coordination with general contractors and subcontractors, integration of security and building systems, 
+          CSC provided comprehensive Owner’s Representative and design-build oversight for the San Bernardino Wells Fargo Development.
+          The program encompassed delivery of a high-security office building, two cast-in-place parking structures, a ground-up Panera Bread,
+          a multi-tenant retail shell, an $8.2M clean room tenant improvement, and miscellaneous retail units.
+          Responsibilities included municipal permitting, coordination with general contractors and subcontractors, integration of security and building systems,
           phased turnovers, and quality, cost, and schedule control across all scopes.
         </p>
 
@@ -94,19 +94,36 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (defensive: dual-path + cache-bust) -->
     <section class="section bg-alt">
       <div class="container">
         <h2>Parking Structures (photos available)</h2>
         <div class="gallery-grid">
-          <img src="/assets/img/projects/wells-fargo-ps-1.jpg"
-               alt="Wells Fargo San Bernardino parking structure, view 1"
-               loading="lazy"
-               onerror="this.src='/assets/img/projects/placeholder.jpg'">
-          <img src="/assets/img/projects/wells-fargo-ps-2.jpg"
-               alt="Wells Fargo San Bernardino parking structure, view 2"
-               loading="lazy"
-               onerror="this.src='/assets/img/projects/placeholder.jpg'">
+
+          <!-- Photo 1 -->
+          <picture>
+            <!-- Preferred, standardized path -->
+            <source srcset="/assets/img/projects/wells-fargo-ps-1.jpg?v=3">
+            <!-- Fallback to original filename (URL-encoded spaces and .JPG) -->
+            <source srcset="/assets/img/projects/Wells%20Fargo%20Parking%20Structure%20P1010062.JPG?v=3">
+            <img
+              src="/assets/img/projects/wells-fargo-ps-1.jpg?v=3"
+              alt="Wells Fargo San Bernardino parking structure, view 1"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='/assets/img/projects/Wells%20Fargo%20Parking%20Structure%20P1010062.JPG?v=3';">
+          </picture>
+
+          <!-- Photo 2 -->
+          <picture>
+            <source srcset="/assets/img/projects/wells-fargo-ps-2.jpg?v=3">
+            <source srcset="/assets/img/projects/WF%20Parking%20Structure%20P1010066.JPG?v=3">
+            <img
+              src="/assets/img/projects/wells-fargo-ps-2.jpg?v=3"
+              alt="Wells Fargo San Bernardino parking structure, view 2"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='/assets/img/projects/WF%20Parking%20Structure%20P1010066.JPG?v=3';">
+          </picture>
+
         </div>
       </div>
     </section>
