@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>USA — Test Kitchens — CSC</title>
+  <title>USA · Test Kitchens — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$32M program delivering FM, UL, and FDA qualified test kitchens for McDonald’s and Wendy’s across multiple US locations.">
   <link rel="stylesheet" href="/assets/css/styles.css?v=23">
@@ -11,21 +11,23 @@
     .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
     .subtle{opacity:.85}
 
-    /* BULLET FIX + layout */
+    /* Program Geography list: remove bullets and any global pseudo-bullets */
     .locations-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
       gap:.75rem;
-      list-style:none;   /* no bullets */
-      margin:0;          /* remove left indent */
-      padding:0;         /* remove left indent */
+      list-style:none;
+      margin:0;
+      padding:0;
     }
     .locations-grid li{
-      background:#fff;border:1px solid #eee;border-radius:10px;padding:.6rem .8rem
+      background:#fff;border:1px solid #eee;border-radius:10px;padding:.6rem .8rem;
+      position:relative;
     }
+    /* Kill markers and any global list decorations */
+    .locations-grid li::marker{content:''}
+    .locations-grid li::before{content:none !important;display:none !important}
 
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-    .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
     .hero-thumb{margin-top:1.25rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6}
   </style>
 </head>
@@ -47,9 +49,9 @@
     <section class="hero">
       <div class="container hero-inner">
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
-        <h1>USA — Test Kitchens</h1>
+        <h1>USA · Test Kitchens</h1>
         <p class="lede">$32M program delivering FM, UL, and FDA qualified test kitchens for McDonald’s and Wendy’s across multiple US locations.</p>
-        <img class="hero-thumb" src="/assets/img/projects/us-test-kitchen-thumb.jpg" alt="USA — Test Kitchens"
+        <img class="hero-thumb" src="/assets/img/projects/us-test-kitchen-thumb.jpg" alt="USA · Test Kitchens"
              onerror="this.src='/assets/img/projects/placeholder.jpg'">
       </div>
     </section>
@@ -123,17 +125,6 @@
           <li>Tennessee</li>
         </ul>
         <p style="margin-top:1rem"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
-      </div>
-    </section>
-
-    <!-- OPTIONAL GALLERY (placeholders) -->
-    <section class="section">
-      <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-          <img src="/assets/img/projects/placeholder.jpg" alt="Program view 1" loading="lazy">
-          <img src="/assets/img/projects/placeholder.jpg" alt="Program view 2" loading="lazy">
-        </div>
       </div>
     </section>
   </main>
