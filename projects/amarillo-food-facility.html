@@ -113,7 +113,6 @@
           <!-- Early to mid construction -->
           <img src="/assets/img/projects/ama-cacique-construction-early-snow-scenic.jpg" alt="Early construction — snow" onerror="this.src='/assets/img/projects/placeholder.jpg'">
           <img src="/assets/img/projects/ama-cacique-NE-office-construction.jpg" alt="Office and roof — early phase" onerror="this.src='/assets/img/projects/placeholder.jpg'">
-          
           <img src="/assets/img/projects/ama-cacique-SE-corner-early-construction.jpg" alt="SE corner — early construction" onerror="this.src='/assets/img/projects/placeholder.jpg'">
           <img src="/assets/img/projects/ama-cacique-W-drone-construction.jpg" alt="West side — construction" onerror="this.src='/assets/img/projects/placeholder.jpg'">
           <img src="/assets/img/projects/ama-cacique-ramp-early-construction.jpg" alt="Ramp and structure — early" onerror="this.src='/assets/img/projects/placeholder.jpg'">
@@ -141,7 +140,6 @@
           <img src="/assets/img/projects/ama-cacique-N-drone.JPG" alt="North aerial — operations" onerror="this.src='/assets/img/projects/placeholder.jpg'">
           <img src="/assets/img/projects/ama-cacique-NE-drone-High.jpg" alt="High northeast aerial" onerror="this.src='/assets/img/projects/placeholder.jpg'">
           <img src="/assets/img/projects/ama-cacique-NE-drone.JPG" alt="Northeast aerial — operations" onerror="this.src='/assets/img/projects/placeholder.jpg'">
-          
         </div>
       </div>
     </section>
@@ -155,7 +153,8 @@
         <div class="map-box">
           <div class="map-skeleton" id="mapShell">
             <small>Map loads only after click to minimize third-party requests.</small>
-            <a class="map-btn" href="https://maps.app.goo.gl/NHRqEjkb2Vj3Jpbs8" target="_blank" rel="noopener">Open Street View</a>
+            <a class="map-btn" href="https://www.google.com/maps/place/Amarillo,+TX/@35.1250983,-101.8660746,3a,75y,127.77h,82.58t/data=!3m7!1e1!3m5!1sobyentfHFYNUkdww0Dstrw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.423727024290599%26panoid%3DobyentfHFYNUkdww0Dstrw%26yaw%3D127.77431941525505!7i16384!8i8192!4m6!3m5!1s0x870148d4b245cf03:0xd0f3d11c6836d2af!8m2!3d35.2069816!4d-101.8320065!16zL20vMDEzbjYw?entry=ttu" 
+               target="_blank" rel="noopener">Open Street View</a>
             <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
           </div>
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
@@ -184,8 +183,7 @@
 
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
-        var addr = encodeURIComponent('8501 S Georgia Street, Amarillo, Texas 79118');
-        var src = 'https://www.google.com/maps?&q=' + addr + '&output=embed';
+        var src = 'https://www.google.com/maps?layer=c&cbll=35.1250983,-101.8660746&cbp=12,127.77,,82.58,,&output=embed';
         target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
