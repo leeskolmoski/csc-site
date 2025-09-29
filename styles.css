@@ -22,7 +22,7 @@ a{ color:inherit; }
 .site-header{ position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--border); }
 .site-header .container{ display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px 24px; }
 
-/* centered logo, now tinted blue */
+/* centered logo, tinted blue */
 .logo img{
   display:block;
   height:36px;
@@ -30,14 +30,12 @@ a{ color:inherit; }
   filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(548%) hue-rotate(191deg) brightness(95%) contrast(92%);
 }
 
-/* nav that matches your HTML: .site-nav */
+/* nav */
 .site-nav{
   display:flex; justify-content:center; align-items:center;
   gap:28px; padding-bottom:6px;
   font:600 16px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;
 }
-
-/* pill links, no underline */
 .site-nav a,
 .site-nav a:link,
 .site-nav a:visited{
@@ -47,7 +45,6 @@ a{ color:inherit; }
 .site-nav a:hover,.site-nav a:focus{ background:rgba(43,60,127,.08); outline:none; }
 .site-nav a[aria-current="page"]{ background:rgba(43,60,127,.12); }
 
-/* single line on phones, swipe if tight */
 @media (max-width:640px){
   .site-nav{ gap:18px; font-size:15px; white-space:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
   .site-nav::-webkit-scrollbar{ display:none; }
@@ -66,7 +63,6 @@ a{ color:inherit; }
 .hero-actions{ margin-top:16px; }
 
 /* ===== Buttons ===== */
-/* Make both buttons match in blue */
 .btn,
 .btn.btn-secondary {
   display:inline-block;
@@ -100,9 +96,17 @@ a{ color:inherit; }
 .thumb-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
 @media (max-width:1000px){ .thumb-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:640px){ .thumb-grid{ grid-template-columns:1fr; } }
-.thumb-card{ display:block; background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; transition:transform .06s ease, box-shadow .06s ease; }
+
+.thumb-card{
+  display:block; background:#fff; border:1px solid var(--border); border-radius:14px;
+  overflow:hidden; text-decoration:none; color:inherit;
+  transition:transform .06s ease, box-shadow .06s ease;
+}
 .thumb-card:hover{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,.06); }
-.thumb-card img{ display:block; width:100%; height:180px; object-fit:cover; }
+
+/* legacy image rule, kept for older cards */
+.thumb-card > img{ display:block; width:100%; height:180px; object-fit:cover; }
+
 .thumb-card h3{ margin:12px 16px 6px; font-size:1.05rem; color:var(--blue); }
 .thumb-card p{ margin:0 16px 16px; color:var(--muted); }
 
@@ -133,57 +137,22 @@ a{ color:inherit; }
 /* --- Smaller, muted footer --- */
 .site-footer--small { font-size:.875rem; color:#666; border-top:1px solid #e6e6e6; text-align:center; padding:1.25rem 0; }
 
-
-
-
-/* ===== Project thumb overlays ===== */
-.thumb-card .thumb-img-wrap {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.thumb-card .thumb-img-wrap img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 16/9;
-  object-position: 60% 50%;
-}
-.thumb-card .thumb-label {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  background: rgba(0,0,0,.6);
-  color: #fff;
-  padding: .35rem .6rem;
-  border-radius: 9999px;
-  font-weight: 700;
-  font-size: .85rem;
-  letter-spacing: .02em;
-  box-shadow: 0 2px 10px rgba(0,0,0,.15);
-}
-/* Optional: specific tweak for the St. Louis image crop */
-.thumb-card.tkcr .thumb-img-wrap img {
-  object-position: 55% 50%;
-}
-
-
-
 /* ===== Project thumb overlays (TK/CR) ===== */
-.thumb-card .thumb-img-wrap{position:relative;border-radius:12px;overflow:hidden}
+.thumb-card .thumb-img-wrap{ position:relative; border-radius:12px; overflow:hidden; }
 .thumb-card .thumb-img-wrap img{
-  display:block;width:100%;height:100%;
-  object-fit:cover;aspect-ratio:16/9;object-position:55% 50%;
+  display:block; width:100%; height:100%;
+  object-fit:cover; aspect-ratio:16/9; object-position:58% 48%;
 }
+/* ensure the wrapped images are not forced to 180px height */
+.thumb-card .thumb-img-wrap img{ height:auto; }
+
 .thumb-card .thumb-label{
-  position:absolute;left:10px;bottom:10px;
-  background:rgba(0,0,0,.6);color:#fff;
-  padding:.35rem .6rem;border-radius:9999px;
-  font-weight:700;font-size:.85rem;letter-spacing:.02em;
-  box-shadow:0 2px 10px rgba(0,0,0,.15)
+  position:absolute; left:10px; bottom:10px;
+  background:rgba(0,0,0,.6); color:#fff;
+  padding:.35rem .6rem; border-radius:9999px;
+  font-weight:700; font-size:.85rem; letter-spacing:.02em;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-/* Ensure old rule doesn't force 180px height on wrapped images */
-.thumb-card > img{ height:180px }              /* legacy cards */
-.thumb-card .thumb-img-wrap img{ height:auto } /* new cards */
+/* tweak crop for the St. Louis card only, if needed */
+.thumb-card.tkcr .thumb-img-wrap img{ object-position:55% 50%; }
