@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Heber City, UT, Mixed Use ($8.4M) — Construction Services Consulting, Inc.</title>
+  <title>Heber, Utah — Mixed-Use Development ($8.4M) — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Heber City mixed use development with residential over retail and site improvements. Owner’s rep and CM support.">
+  <meta name="description" content="$8.4M mixed-use residential and commercial building, design and build, entitlements and preconstruction.">
   <link rel="stylesheet" href="../assets/css/styles.css?v=7">
 </head>
 <body>
@@ -20,119 +20,49 @@
     </div>
   </header>
 
-  <main class="container page">
-    <nav class="breadcrumb">
-      <a href="/">Home</a> <span>/</span>
-      <a href="/projects/">Projects</a> <span>/</span>
-      <span>Heber City Mixed Use ($8.4M)</span>
-    </nav>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <img class="hero-mark" src="../assets/img/logo-short.svg" alt="" height="48">
+        <h1>Heber, Utah, Mixed-Use Development</h1>
+        <p class="lede">$8.4M building with residential over commercial, delivered as design and build.</p>
+      </div>
+    </section>
 
-    <article class="project">
-      <header class="project-hero">
-        <h1>Heber City, Utah, Mixed Use Development</h1>
-        <p class="muted">$8.4M total project value</p>
-      </header>
-
-      <section class="project-meta grid two">
-        <div class="card">
-          <h2>Overview</h2>
-          <p>
-            Urban infill mixed use project with residential over street level retail, on a constrained site in Heber City.
-            CSC served as owner’s representative and CM support from preconstruction through turnover, coordinating entitlement,
-            utility upgrades, traffic control, and podium construction.
-          </p>
-          <ul class="bullets">
-            <li>Role: Owner’s Representative, CM support</li>
-            <li>Market: Mixed Use, Residential</li>
-            <li>Location: Heber City, Utah, USA</li>
-            <li>Status: Completed</li>
-          </ul>
+    <section class="section">
+      <div class="container">
+        <div class="card-grid">
+          <article class="card">
+            <h3>Overview</h3>
+            <p>Managed design, zoning and municipality approvals and requirements, preconstruction, and bidding.</p>
+          </article>
+          <article class="card">
+            <h3>Scope</h3>
+            <ul class="checklist">
+              <li>Residential over street level commercial</li>
+              <li>Entitlements and permit strategy</li>
+              <li>Preconstruction and procurement</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Delivery</h3>
+            <ul class="checklist">
+              <li>Design and build leadership</li>
+              <li>Schedule and budget controls</li>
+              <li>AHJ coordination and turnover</li>
+            </ul>
+          </article>
         </div>
-
-        <div class="card">
-          <h2>At a glance</h2>
-          <ul class="kv">
-            <li><span>Budget</span><b>$8,400,000</b></li>
-            <li><span>Delivery</span><b>Design, bid, build</b></li>
-            <li><span>Duration</span><b>14–16 months</b></li>
-            <li><span>Program</span><b>Residential over retail, surface parking</b></li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="project-gallery">
-        <h2>Gallery</h2>
-        <div class="thumb-grid">
-          <a class="thumb" href="/assets/img/projects/heber-mixed-use-8-4m/1.jpg">
-            <img src="/assets/img/projects/heber-mixed-use-8-4m/1.jpg" alt="Street elevation and retail frontage">
-          </a>
-          <a class="thumb" href="/assets/img/projects/heber-mixed-use-8-4m/2.jpg">
-            <img src="/assets/img/projects/heber-mixed-use-8-4m/2.jpg" alt="Amenity and podium deck">
-          </a>
-          <a class="thumb" href="/assets/img/projects/heber-mixed-use-8-4m/3.jpg">
-            <img src="/assets/img/projects/heber-mixed-use-8-4m/3.jpg" alt="Lobby and residential entry">
-          </a>
-        </div>
-      </section>
-
-      <section class="project-scope grid two">
-        <div class="card">
-          <h2>Scope</h2>
-          <ul class="bullets">
-            <li>Preconstruction planning and permit coordination</li>
-            <li>Trade prequalification and bid packaging</li>
-            <li>Schedule and budget controls with risk log</li>
-            <li>Utility coordination and traffic control planning</li>
-            <li>QA for envelope, MEP, and life safety systems</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>Key outcomes</h2>
-          <ul class="bullets">
-            <li>Podium and superstructure delivered on schedule</li>
-            <li>Retail shells turned over for tenant improvements</li>
-            <li>Residential units and site work accepted by AHJ</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="project-location">
-        <h2>Location</h2>
-        <div class="map-cta">
-          <button class="btn" id="loadMap">Show Map</button>
-          <small class="muted" style="display:block;margin-top:8px;">Loads Google Maps only after you click.</small>
-        </div>
-        <div id="mapSlot"></div>
-
-        <script>
-          const btn = document.getElementById('loadMap');
-          const slot = document.getElementById('mapSlot');
-          btn?.addEventListener('click', () => {
-            btn.disabled = true; btn.textContent = 'Loading…';
-            // Approximate Heber City center
-            const loc = '40.5068,-111.4133';
-            fetch(`/api/map?mode=place&q=Heber%20City%2C%20UT&loc=${encodeURIComponent(loc)}`)
-              .then(r => r.text())
-              .then(html => { slot.innerHTML = html; })
-              .catch(() => { slot.innerHTML = '<p class="muted">Map failed to load. Please try again later.</p>'; });
-          });
-        </script>
-      </section>
-
-      
-    </article>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+      </div>
+    </section>
   </main>
 
-  
-
-
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
 </body>
 </html>
