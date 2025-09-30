@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$64M USDA food distribution and temperature-controlled facility in Stockton, California.">
   <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+  <style>
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -26,38 +30,53 @@
       <div class="container hero-inner">
         <img class="hero-mark" src="../assets/img/logo-short.svg" alt="" height="48">
         <h1>Stockton, California — Distribution Facility</h1>
-        <p class="lede">$64M USDA-qualified distribution facility with temperature-controlled systems in Stockton, California.</p>
+        <p class="lede">$64M USDA-qualified food distribution facility with temperature-controlled systems, administrative offices, and logistics support.</p>
+        <img src="../assets/img/projects/stockton-distribution-64m-thumb.jpg"
+             alt="Stockton distribution facility — hero"
+             style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
+             onerror="this.src='../assets/img/projects/placeholder.jpg'">
       </div>
     </section>
 
-    <!-- DETAILS -->
+    <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <div class="card-grid">
+        <h2>Project Overview</h2>
+        <p>
+          Pete Skolmoski managed safety monitoring and procedures, subcontractor coordination,
+          inspections from owner, municipalities and third-party agencies, scheduling, daily onsite work,
+          and budget control. The project achieved a “Recordable Incident Rate” and
+          “Lost Workday Case Incident Rate” of 0.00, while delivering a USDA-compliant
+          temperature-controlled food distribution facility.
+        </p>
+
+        <div class="card-grid" style="margin-top:1rem">
           <article class="card">
-            <h3>Scope</h3>
+            <h3>Program Value &amp; Scale</h3>
             <ul class="checklist">
-              <li>Temperature-controlled food distribution warehouse</li>
-              <li>Integrated logistics and circulation systems</li>
-              <li>Administrative office space and support areas</li>
+              <li><strong>Facility:</strong> 750,000&nbsp;SF; approx. <strong>$64M</strong>.</li>
+              <li><strong>Ancillary scopes:</strong> office buildout, circulation systems, utilities, landscaping.</li>
+              <li><strong>Schedule:</strong> Completed on-time and on-budget.</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Role</h3>
+            <h3>Key Deliverables</h3>
+            <ul class="checklist">
+              <li>USDA-qualified temperature-controlled warehouse</li>
+              <li>Integrated logistics and dock systems</li>
+              <li>Administrative offices and support areas</li>
+              <li>Commissioning and QA/QC turnover</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Execution</h3>
             <ul class="checklist">
               <li>Owner’s Representative / Design-Build oversight</li>
-              <li>Procurement and USDA compliance coordination</li>
-              <li>Commissioning, QA/QC, and turnover</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Program</h3>
-            <ul class="checklist">
-              <li>Approx. $64M program value</li>
-              <li>Temperature-controlled warehouse with USDA standards</li>
-              <li>On-time and on-budget delivery</li>
+              <li>Safety monitoring and reporting (0.00 incident rate)</li>
+              <li>Inspections with owner, municipalities, and agencies</li>
+              <li>Schedule, quality, safety, and cost control</li>
             </ul>
           </article>
         </div>
@@ -69,25 +88,23 @@
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <!-- Add photo later -->
-          <img src="../assets/img/projects/stockton-distribution-64m.jpg"
-               alt="Stockton distribution facility"
+          <img src="../assets/img/projects/stockton-distribution-64m-1.jpg"
+               alt="Stockton distribution facility view 1"
+               onerror="this.src='../assets/img/projects/placeholder.jpg'">
+          <img src="../assets/img/projects/stockton-distribution-64m-2.jpg"
+               alt="Stockton distribution facility view 2"
                onerror="this.src='../assets/img/projects/placeholder.jpg'">
         </div>
-        <p><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
 </body>
 </html>
