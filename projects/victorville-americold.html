@@ -7,12 +7,20 @@
   <meta name="description" content="$23M Americold office, USDA food distribution and temperature-controlled facility in Victorville, California. Subzero and cold storage, docks, office, ammonia cooling tower. CSC served as Owner’s Rep with full safety oversight.">
   <link rel="stylesheet" href="/assets/css/styles.css?v=1">
   <style>
+    /* layout helpers to match the rest of the site */
     .hero{background:#f6f9ff;padding:3.5rem 0}.hero .lede{max-width:70ch}
     .kv{list-style:none;margin:0;padding:0}
     .kv li{display:grid;grid-template-columns:10rem 1fr;gap:.75rem;padding:.45rem 0;border-top:1px solid #eee}
     .kv li:first-child{border-top:0}
-    .thumb-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-    .thumb-grid img{width:100%;height:auto;display:block;border-radius:.5rem;aspect-ratio:16/9;object-fit:cover}
+    .thumb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .thumb-grid img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid #e6e6e6;aspect-ratio:16/9;object-fit:cover}
+
+    /* map UI copied from the San Bernardino page so behavior matches */
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
     .btn{margin-right:.5rem}
   </style>
 </head>
@@ -92,44 +100,38 @@
     </div>
   </section>
 
-  <!-- GALLERY (flat paths + resilient fallbacks) -->
+  <!-- GALLERY (flat image paths with resilient fallbacks) -->
   <section class="section bg-alt">
     <div class="container">
       <h2>Gallery</h2>
       <div class="thumb-grid">
-        <!-- Primary image, falls back to placeholder only -->
-        <img src="/assets/img/projects/americold-2.png"
-             alt="Americold Victorville exterior and yard"
+        <img src="/assets/img/projects/americold-2.png" alt="Americold Victorville exterior and yard"
              onerror="this.onerror=null;this.src='/assets/img/projects/placeholder.jpg'">
-
-        <!-- If 1 or 3 are missing, swap to the known good 2 -->
-        <img src="/assets/img/projects/americold-1.png"
-             alt="Dock and side elevation"
+        <img src="/assets/img/projects/americold-1.png" alt="Dock and side elevation"
              onerror="this.onerror=null;this.src='/assets/img/projects/americold-2.png'">
-
-        <img src="/assets/img/projects/americold-3.png"
-             alt="Aerial view and circulation"
+        <img src="/assets/img/projects/americold-3.png" alt="Aerial view and circulation"
              onerror="this.onerror=null;this.src='/assets/img/projects/americold-2.png'">
       </div>
     </div>
   </section>
 
-  <!-- MAPS -->
+  <!-- LOCATION -->
   <section class="section">
     <div class="container">
-      <h2>Location and street view</h2>
-      <p class="muted">Opens in Google Maps.</p>
-      <p>
-        <a class="btn" href="https://maps.app.goo.gl/vY9axRaJhBiZgk1t8" target="_blank" rel="noopener">Open in Google Maps</a>
-        <a class="btn btn-secondary" href="https://www.google.com/maps/place/Americold+Logistics/@34.4901981,-117.2889066,3a,75y,129.65h,102.35t/data=!3m7!1e1!3m5!1sDnx4zyfT7K8e4DGEiZlIuw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.346224278414326%26panoid%3DDnx4zyfT7K8e4DGEiZlIuw%26yaw%3D129.64967921669515!7i16384!8i8192!4m6!3m5!1s0x80c366bf21998e61:0xf633524a53bcb3d!8m2!3d34.4901378!4d-117.2883754!16s%2Fg%2F12612cyt1"
-           target="_blank" rel="noopener">Street View</a>
-      </p>
-    </div>
-  </section>
+      <h2>Location</h2>
+      <p>12979 Enterprise Way, Victorville, CA 92395</p>
 
-  <section class="section">
-    <div class="container">
-      <p><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+      <div class="map-box">
+        <div class="map-skeleton" id="mapShell">
+          <small>Map loads only after click to minimize third-party requests.</small>
+          <a class="map-btn" href="https://www.google.com/maps/place/Americold+Logistics/@34.4901981,-117.2889066,3a,75y,129.65h,102.35t/data=!3m7!1e1!3m5!1sDnx4zyfT7K8e4DGEiZlIuw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.346224278414326%26panoid%3DDnx4zyfT7K8e4DGEiZlIuw%26yaw%3D129.64967921669515!7i16384!8i8192!4m6!3m5!1s0x80c366bf21998e61:0xf633524a53bcb3d!8m2!3d34.4901378!4d-117.2883754!16s%2Fg%2F12612cyt1"
+             target="_blank" rel="noopener">Open Street View</a>
+          <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+        </div>
+        <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+      </div>
+
+      <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
     </div>
   </section>
 </main>
@@ -138,7 +140,27 @@
   <div class="container">
     <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Click-to-load Google Maps embed (same pattern as San Bernardino)
+  (function(){
+    var embedBtn = document.getElementById('embedMap');
+    var shell = document.getElementById('mapShell');
+    var target = document.getElementById('mapEmbed');
+    if (!embedBtn || !shell || !target) return;
+
+    embedBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      var addr = '12979+Enterprise+Way,+Victorville,+CA+92395';
+      var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+      target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+      target.style.display = 'block';
+      shell.style.display = 'none';
+    }, { passive: false });
+  })();
+</script>
 </body>
 </html>
