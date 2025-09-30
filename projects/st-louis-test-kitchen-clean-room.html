@@ -121,7 +121,9 @@
         <div class="map-box">
           <div class="map-skeleton" id="mapShell">
             <small>Map loads only after click to minimize third party requests.</small>
-            <a class="map-btn" href="https://maps.app.goo.gl/dxjF3M4fCjTk9HvB7" target="_blank" rel="noopener">Open Street View</a>
+            <!-- Fixed Street View link, no dynamic short link -->
+            <a class="map-btn" href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.62684,-90.20034"
+               target="_blank" rel="noopener">Open Street View</a>
             <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
           </div>
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
@@ -148,7 +150,7 @@
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
         var addr = encodeURIComponent('800 Market Street, St. Louis, MO');
-        var src = 'https://www.google.com/maps?&q=' + addr + '&output=embed';
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
         target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
