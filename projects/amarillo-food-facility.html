@@ -174,7 +174,7 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click-to-load map (no API key, no automatic requests)
+    // Click-to-load map: use a standard Maps embed for the address (not Street View)
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
@@ -183,7 +183,8 @@
 
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
-        var src = 'https://www.google.com/maps?layer=c&cbll=35.1250983,-101.8660746&cbp=12,127.77,,82.58,,&output=embed';
+        var addr = '8501+S+Georgia+Street,+Amarillo,+Texas+79118';
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
         target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
