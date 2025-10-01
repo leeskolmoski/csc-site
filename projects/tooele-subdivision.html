@@ -7,7 +7,19 @@
   <meta name="description" content="$66M, 220-lot civil subdivision in Tooele, Utah with five community shared buildings.">
   <link rel="stylesheet" href="/assets/css/styles.css?v=24">
   <style>
-    .gallery-grid{display:none} /* no gallery on this project */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+      justify-items:center;
+    }
+    .gallery-grid img{
+      max-width:820px;   /* keeps image crisp, prevents it from stretching */
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      border:1px solid #e6e6e6;
+    }
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small{color:#555}
@@ -35,15 +47,9 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
-
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>Tooele, Utah — Subdivision</h1>
         <p class="lede">$66M, 220-lot civil subdivision with five community shared buildings.</p>
-
-        <!-- Upload the provided satellite image to this path -->
-        <img src="/assets/img/projects/tooele.png"
-             alt="Tooele subdivision — aerial"
-             style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
-             onerror="this.src='/assets/img/projects/placeholder.jpg'">
       </div>
     </section>
 
@@ -95,13 +101,15 @@
       </div>
     </section>
 
-
-      <section class="section bg-alt">
+    <!-- GALLERY -->
+    <section class="section bg-alt">
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <img src="/assets/img/projects/tooele.png" alt="Tooele" onerror="this.src='/assets/img/projects/placeholder.jpg'">
-
+          <img src="/assets/img/projects/tooele-subdivision-hero.jpg"
+               alt="Tooele subdivision — aerial"
+               loading="lazy"
+               onerror="this.src='/assets/img/projects/placeholder.jpg'">
         </div>
       </div>
     </section>
