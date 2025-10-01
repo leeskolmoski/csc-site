@@ -4,8 +4,19 @@
   <meta charset="utf-8">
   <title>Tooele, Utah — Subdivision — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="$66M, 220-lot civil subdivision in Tooele, Utah with five community/shared buildings.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+  <meta name="description" content="$66M, 220-lot civil subdivision in Tooele, Utah with five community shared buildings.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+  <style>
+    .gallery-grid{display:none} /* no gallery on this project */
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -24,70 +35,110 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
-        <img class="hero-mark" src="../assets/img/logo-short.svg" alt="" height="48">
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>Tooele, Utah — Subdivision</h1>
-        <p class="lede">$66M · 220-lot civil subdivision with five community/shared buildings.</p>
+        <p class="lede">$66M, 220-lot civil subdivision with five community shared buildings.</p>
+
+        <!-- Upload the provided satellite image to this path -->
+        <img src="/assets/img/projects/tooele-subdivision-hero.jpg"
+             alt="Tooele subdivision — aerial"
+             style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
+             onerror="this.src='/assets/img/projects/placeholder.jpg'">
       </div>
     </section>
 
-    <!-- DETAILS -->
+    <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <div class="card-grid">
+        <h2>Project Overview</h2>
+        <p>
+          220-lot subdivision in Tooele, Utah. CSC completed all civil work including site grading, underground utilities,
+          stormwater drainage and retention, roads, asphalt, curb, gutter, and sidewalks. Program includes five community
+          shared buildings and supporting amenities.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Value</strong><br><span class="subtle">$66 million program</span></div>
+          <div class="fact"><strong>Lots</strong><br><span class="subtle">220 residential lots</span></div>
+          <div class="fact"><strong>Community</strong><br><span class="subtle">Five shared buildings</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Phased civil and infrastructure</span></div>
+        </div>
+
+        <div class="card-grid" style="margin-top:1rem">
           <article class="card">
             <h3>Scope</h3>
             <ul class="checklist">
-              <li>220-lot subdivision planning and approvals</li>
-              <li>Civil works: roads, utilities, grading, drainage</li>
-              <li>Five community/shared buildings and amenities</li>
+              <li>Civil works: grading, utilities, drainage, retention</li>
+              <li>Roads, asphalt, curb, gutter, sidewalks</li>
+              <li>Community shared buildings and site amenities</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Role</h3>
             <ul class="checklist">
-              <li>Design-Build oversight / Owner’s Representative</li>
+              <li>Owner’s Representative and field coordination</li>
               <li>Municipal coordination, permitting, inspections</li>
-              <li>Contractor procurement and schedule management</li>
+              <li>Schedule, quality, safety, and cost control</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Program</h3>
+            <h3>Execution</h3>
             <ul class="checklist">
-              <li>Approx. $66M total program value</li>
-              <li>Phased infrastructure delivery to accelerate lot releases</li>
-              <li>Quality standards to protect long-term asset value</li>
+              <li>Phased infrastructure to accelerate lot releases</li>
+              <li>QA/QC standards for long-term asset value</li>
+              <li>Stakeholder and contractor management</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section bg-alt">
+    <!-- LOCATION -->
+    <section class="section">
       <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-          <!-- Add the photo later; keep filename consistent -->
-          <img src="../assets/img/projects/tooele-subdivision.jpg"
-               alt="Tooele subdivision"
-               onerror="this.src='../assets/img/projects/placeholder.jpg'">
+        <h2>Location</h2>
+        <p>2000 North Berra Blvd, Tooele, Utah</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Map loads after click to minimize third-party requests.</small>
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
-        <p><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
+    // Click-to-load map only, no Street View
+    (function(){
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        var addr = encodeURIComponent('2000 North Berra Blvd, Tooele, Utah');
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display = 'block';
+        shell.style.display = 'none';
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
