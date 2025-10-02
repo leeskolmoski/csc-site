@@ -2,10 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Waco, Texas — Aluminum Can Facility — CSC</title>
+  <title>Waco, Texas — Aluminum Can Production Facility ($61M) — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aluminum can production and distribution facility in Waco, Texas.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=7">
+  <meta name="description" content="$61M aluminum can production and distribution facility in Waco, Texas. Design/Build management, day-to-day construction oversight, scheduling, safety, bidding/buyout, and city coordination.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+  <style>
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+    .img-note{font-size:.9rem;color:#555;margin-top:.5rem}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -24,66 +35,83 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
-        <img class="hero-mark" src="../assets/img/logo-short.svg" alt="" height="48">
-        <h1>Waco, Texas — Aluminum Can Facility</h1>
-        <p class="lede">Design-build procurement of an aluminum can production plant with integrated distribution facilities.</p>
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
+        <h1>Waco, Texas — Aluminum Can Production Facility</h1>
+        <p class="lede">$61M Design/Build aluminum can production and distribution facility.</p>
+
+        <!-- Hero image (Google Earth view) -->
+        <img src="/assets/img/projects/waco-google-earth-view.png"
+             alt="Google Earth view of aluminum can production facility — Waco, Texas"
+             style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
+             onerror="this.src='/assets/img/projects/placeholder.jpg'">
+        <div class="img-note">Image: Google Earth view of the facility.</div>
       </div>
     </section>
 
-    <!-- DETAILS -->
+    <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <div class="card-grid">
-          <article class="card">
-            <h3>Scope</h3>
-            <ul class="checklist">
-              <li>Aluminum can manufacturing plant</li>
-              <li>Distribution warehouse integration</li>
-              <li>Process and building coordination</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Role</h3>
-            <ul class="checklist">
-              <li>Owner’s Representative / Design-Build oversight</li>
-              <li>GC procurement and on-site monitoring</li>
-              <li>Municipal coordination and permitting</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Program</h3>
-            <ul class="checklist">
-              <li>Approx. $61M program value</li>
-              <li>Schedule-driven delivery</li>
-              <li>Commissioning and turnover for operations</li>
-            </ul>
-          </article>
+        <h2>Project Overview</h2>
+        <p>
+          Design/Build program for a new aluminum can production plant with integrated distribution. CSC managed the design
+          and engineering, day-to-day construction activities, scheduling, safety planning and procedures, and the bidding
+          and buyout of the project. Throughout delivery, CSC coordinated with the Waco City building and zoning departments,
+          organizing inspections and quality control to ensure a compliant, on-schedule turnover.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Value</strong><br><span class="subtle">$61M</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design/Build management</span></div>
+          <div class="fact"><strong>Program</strong><br><span class="subtle">Manufacturing + distribution</span></div>
+          <div class="fact"><strong>City Coordination</strong><br><span class="subtle">Inspections &amp; QA/QC with Waco</span></div>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section bg-alt">
+    <!-- LOCATION -->
+    <section class="section">
       <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-          <img src="../assets/img/projects/waco-aluminum-can-facility.jpg" alt="Waco aluminum can facility"
-               onerror="this.src='../assets/img/projects/placeholder.jpg'">
+        <h2>Location</h2>
+        <p>1901 Wycon Drive, Waco, Texas 76712</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Map embed loads only after you click. (No Street View for this site.)</small>
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
-        <p><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
+    // Click-to-load map (no Street View)
+    (function(){
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        var addr = encodeURIComponent('1901 Wycon Drive, Waco, Texas 76712');
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display = 'block';
+        shell.style.display = 'none';
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
