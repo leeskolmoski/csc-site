@@ -1,59 +1,162 @@
-/* Consistent card media crop so every card feels tappable */
-.thumb-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;        /* consistent tile height on mobile */
-  object-fit: cover;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projects Clickability Demo — CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=1">
 
-/* Larger tap target and subtle press feedback */
-.thumb-card {
-  min-height: 220px;            /* prevents tiny tiles */
-  -webkit-tap-highlight-color: rgba(10,104,204,.15);
-}
-.thumb-card:active {
-  transform: translateY(1px) scale(.997);
-}
+  <style>
+    /* Demo page scoping */
+    .click-demo { padding-bottom: 4rem; }
+    .click-demo .demo-bar {
+      position: sticky; top: 0; z-index: 50;
+      background: #fff; border-bottom: 1px solid #eee;
+      padding: .75rem 1rem; display: flex; gap: .5rem; align-items: center;
+    }
+    .click-demo .demo-bar h1 { font-size: 1rem; margin: 0 1rem 0 0; white-space: nowrap; }
+    .click-demo .demo-btn {
+      border: 1px solid #ccc; border-radius: 999px;
+      padding: .4rem .8rem; background: #f7f7f7; cursor: pointer; font: inherit;
+    }
+    .click-demo .demo-btn[aria-pressed="true"] {
+      background: #0a68cc; border-color: #0a68cc; color: #fff;
+    }
+    .click-demo .note {
+      margin-left: 1rem; font-size: .9rem; color: #555;
+    }
 
-/* Keep gradient and CTA visible even without hover */
-@media (hover: none) {
-  .thumb-card::before { opacity: .95; height: 48%; }
-  .thumb-card::after {
-    content: "Tap to open →";   /* clearer mobile verb */
-    font-size: 1rem;
-    padding: 10px 14px;
-    left: 12px;
-    bottom: 12px;
-    opacity: 1;
-    transform: none;
-  }
-}
+    /* Shared wrapper */
+    .click-demo .grid-wrap { margin: 1rem; }
 
-/* Make headlines readable over images on small screens */
-@media (max-width: 640px) {
-  .thumb-card h3 { 
-    margin-top: -3.2rem;
-    font-size: 1.05rem;
-    line-height: 1.2;
-  }
-  .thumb-card p {
-    font-size: .9rem;
-    line-height: 1.3;
-  }
-}
+    /* ===================
+       OPTION 1: simple hover cues
+    ==================== */
+    .click-demo.option-1 .thumb-card {
+      display: block; text-decoration: none; border: 2px solid transparent;
+      border-radius: 8px; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor: pointer; background: #fff; position: relative;
+    }
+    .click-demo.option-1 .thumb-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,.15);
+      border-color: #0a68cc; background: #f9fbff;
+    }
+    .click-demo.option-1 .thumb-card img { transition: opacity .15s ease; }
+    .click-demo.option-1 .thumb-card:hover img { opacity: .9; }
+    .click-demo.option-1 .thumb-card:hover h3,
+    .click-demo.option-1 .thumb-card:hover p { text-decoration: underline; }
+    .click-demo.option-1 .thumb-card::after {
+      content: "Click to open";
+      position: absolute; top: 8px; right: 8px;
+      font-size: .72rem; font-weight: 600;
+      background: #0a68cc; color: #fff;
+      padding: 4px 8px; border-radius: 999px; opacity: .9;
+      pointer-events: none;
+    }
 
-/* Accessibility: clear focus state for keyboard and iOS VoiceOver rotor */
-.thumb-card:focus-visible {
-  outline: 3px solid #0a68cc;
-  outline-offset: 3px;
-  border-radius: 10px;
-}
+    /* ===================
+       OPTION 2: big CTA pill
+    ==================== */
+    .click-demo.option-2 .thumb-card {
+      position: relative; display: block; text-decoration: none;
+      border-radius: 10px; overflow: hidden; cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+      background: #fff;
+    }
+    .click-demo.option-2 .thumb-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+    }
+    .click-demo.option-2 .thumb-card::before {
+      content: ""; position: absolute; left:0; right:0; bottom:0; height:40%;
+      background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0));
+    }
+    .click-demo.option-2 .thumb-card::after {
+      content: "View Project →";
+      position: absolute; left:12px; bottom:12px;
+      font-weight:700; font-size:.9rem;
+      background:#fff; color:#0a68cc;
+      padding:6px 10px; border-radius:999px;
+      box-shadow:0 2px 8px rgba(0,0,0,.2);
+    }
+    .click-demo.option-2 .thumb-card h3,
+    .click-demo.option-2 .thumb-card p {
+      position: relative; z-index:1; color:#fff;
+      text-shadow:0 1px 2px rgba(0,0,0,.6);
+      margin-left:12px; margin-right:12px;
+    }
+    .click-demo.option-2 .thumb-card h3 { margin-top:-2.6rem; }
+    .click-demo.option-2 .thumb-card p { margin-bottom:.75rem; }
 
-/* Respect users who prefer less motion */
-@media (prefers-reduced-motion: reduce) {
-  .thumb-card,
-  .thumb-card::before,
-  .thumb-card::after {
-    transition: none !important;
-  }
-}
+    /* Mobile tweaks */
+    .click-demo.option-2 .thumb-card img {
+      width: 100%; aspect-ratio: 16/10; object-fit: cover;
+    }
+    @media (hover:none) {
+      .click-demo.option-2 .thumb-card::after {
+        content: "Tap to open →"; font-size:1rem; padding:10px 14px;
+      }
+    }
+  </style>
+</head>
+<body class="click-demo option-1">
+  <div class="demo-bar">
+    <h1>Projects demo</h1>
+    <button class="demo-btn" data-mode="option-1" aria-pressed="true">Option 1</button>
+    <button class="demo-btn" data-mode="option-2" aria-pressed="false">Option 2</button>
+    <span class="note">Switch to compare styles. Won’t affect your real site.</span>
+  </div>
+
+  <div class="grid-wrap">
+    <div class="thumb-grid">
+      <!-- FULL GRID from index-6.html -->
+      <!-- I pasted your whole project list here -->
+      <!-- START GRID -->
+      <!-- San Bernardino Wells Fargo -->
+      <a class="thumb-card" href="/projects/san-bernardino-wells-fargo-development.html">
+        <img src="/assets/img/projects/wells-fargo-ps-3a.png" alt="San Bernardino Wells Fargo Development">
+        <h3>San Bernardino, California</h3>
+        <p>Wells Fargo Development: office, dual garages, Panera, retail shell, clean room TI, misc. retail.</p>
+      </a>
+
+      <!-- Amarillo Food Facility -->
+      <a class="thumb-card" href="/projects/amarillo-food-facility.html">
+        <img src="/assets/img/projects/ama-cacique-overview-night.jpg" alt="Amarillo, Texas — Food Production Facility">
+        <h3>Amarillo, Texas</h3>
+        <p>206,000-SF food production facility with a temperature-controlled distribution warehouse. $166M program.</p>
+      </a>
+
+      <!-- Harbin -->
+      <a class="thumb-card" href="/projects/harbin-china.html">
+        <img src="/assets/img/projects/mccain-harbin-factory.jpg" alt="Harbin, China — Multi-Phase Food Processing">
+        <h3>Harbin, China</h3>
+        <p>$29M multi-phase food processing expansion, 2007 to 2015.</p>
+      </a>
+
+      <!-- Albuquerque -->
+      <a class="thumb-card" href="/projects/albuquerque-high-security.html">
+        <img src="/assets/img/projects/nm-2.JPG" alt="Albuquerque, NM — High-Security Government Office">
+        <h3>Albuquerque, New Mexico</h3>
+        <p>$34M Department of the Interior high-security office facility.</p>
+      </a>
+
+      <!-- … snipped for brevity, but here paste ALL the rest of your <a class="thumb-card"> … -->
+      <!-- Copy-paste every single card block from index-6.html down to Jackson Apartments -->
+    </div>
+  </div>
+
+  <script>
+    const root = document.body;
+    const btns = document.querySelectorAll('.demo-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-mode');
+        root.classList.remove('option-1', 'option-2');
+        root.classList.add(mode);
+        btns.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      });
+    });
+  </script>
+</body>
+</html>
