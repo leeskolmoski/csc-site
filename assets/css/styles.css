@@ -126,3 +126,53 @@ a{ color:inherit; }
   padding:1.25rem 0;
   border-top:1px solid #e0e0e0;
 }
+
+
+
+/* ==========================
+   Project Index Option 1 Clickability
+   ========================== */
+
+.thumb-card {
+  display: block;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  cursor: pointer;
+  background: #fff;
+  position: relative;
+}
+
+.thumb-card img {
+  transition: opacity .15s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.thumb-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+  border-color: #0a68cc;
+  background: #f9fbff;
+}
+
+.thumb-card:hover img {
+  opacity: .9;
+}
+
+.thumb-card:hover h3,
+.thumb-card:hover p {
+  text-decoration: underline;
+}
+
+/* Badge in corner to scream "click me" */
+.thumb-card::after {
+  content: "Click to open";
+  position: absolute;
+  top: 8px; right: 8px;
+  font-size: .72rem; font-weight: 600;
+  background: #0a68cc; color: #fff;
+  padding: 4px 8px; border-radius: 999px;
+  opacity: .9;
+  pointer-events: none;
+}
