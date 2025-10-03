@@ -7,9 +7,22 @@
   <meta name="description" content="Construction Services Consulting — more than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.">
   <link rel="stylesheet" href="/assets/css/styles.css?v=24">
   <style>
-    /* bring the band style used on project pages to the homepage */
+    /* Bring brand band styling + centered variant to the homepage */
     .band{background:#f7f7fb;padding:2rem 0;border-top:1px solid #eee;border-bottom:1px solid #eee}
-    .band h2{margin-top:0}
+    .band--center{ text-align:center; }
+    .band--center .container{ max-width:980px; }
+    .band--center h2{
+      margin:0 0 .75rem;
+      font-size:1.85rem;
+      line-height:1.25;
+      letter-spacing:.2px;
+    }
+    .band--center p{
+      margin-left:auto;margin-right:auto;
+      max-width:70ch;
+      color:#364254;
+    }
+    .band--center .btn{ margin-left:auto;margin-right:auto; }
   </style>
 </head>
 <body>
@@ -35,8 +48,8 @@
       </div>
     </section>
 
-    <!-- INTRO as branded band -->
-    <section class="band">
+    <!-- INTRO as branded, centered band -->
+    <section class="band band--center">
       <div class="container">
         <h2>Complex Projects. Delivered with Precision and Safety.</h2>
         <p>
@@ -60,3 +73,4 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
