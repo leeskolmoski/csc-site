@@ -2,7 +2,7 @@
 :root{
   --ink:#0b1430;          /* navy */
   --ink-2:#1a254a;        /* darker navy for borders */
-  --blue:#2b3c7f;         /* accent */
+  --blue:#2b3c7f;         /* brand blue */
   --muted:#6b7691;        /* body text */
   --border:#e6e9f2;       /* hairline */
   --alt:#f4f6fb;          /* light blue wash */
@@ -22,7 +22,7 @@ a{ color:inherit; }
 .site-header{ position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--border); }
 .site-header .container{ display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px 24px; }
 
-/* centered logo, now tinted blue */
+/* centered logo, tinted blue */
 .logo img{
   display:block;
   height:36px;
@@ -30,14 +30,12 @@ a{ color:inherit; }
   filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(548%) hue-rotate(191deg) brightness(95%) contrast(92%);
 }
 
-/* nav that matches your HTML: .site-nav */
+/* nav */
 .site-nav{
   display:flex; justify-content:center; align-items:center;
   gap:28px; padding-bottom:6px;
   font:600 16px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;
 }
-
-/* pill links, no underline */
 .site-nav a,
 .site-nav a:link,
 .site-nav a:visited{
@@ -66,7 +64,6 @@ a{ color:inherit; }
 .hero-actions{ margin-top:16px; }
 
 /* ===== Buttons ===== */
-/* Make both buttons match in blue */
 .btn,
 .btn.btn-secondary {
   display:inline-block;
@@ -82,7 +79,7 @@ a{ color:inherit; }
 .btn:hover,
 .btn.btn-secondary:hover{ background:rgba(43,60,127,.08); }
 
-/* ===== Cards ===== */
+/* ===== Cards (used elsewhere) ===== */
 .card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 .card{ background:#fff; border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:0 2px 12px rgba(11,20,48,.04); }
 .card h3{ margin:0 0 8px; color:var(--blue); }
@@ -92,11 +89,15 @@ a{ color:inherit; }
 .bg-alt{ background:var(--alt); }
 
 /* ===== Footer ===== */
-.site-footer{ border-top:1px solid var(--border); padding:24px 0; color:#2a2f3e; }
-.site-footer a{ text-decoration:none; border-bottom:1px dotted rgba(11,20,48,.3); }
-.site-footer a:hover{ color:var(--blue); border-bottom-color:var(--blue); }
+.site-footer{
+  font-size:.875rem;
+  color:#666;
+  text-align:center;
+  padding:1.25rem 0;
+  border-top:1px solid #e0e0e0;
+}
 
-/* ===== Project thumbs ===== */
+/* ===== Project thumbs (used on project index) ===== */
 .thumb-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
 @media (max-width:1000px){ .thumb-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:640px){ .thumb-grid{ grid-template-columns:1fr; } }
@@ -106,98 +107,27 @@ a{ color:inherit; }
 .thumb-card h3{ margin:12px 16px 6px; font-size:1.05rem; color:var(--blue); }
 .thumb-card p{ margin:0 16px 16px; color:var(--muted); }
 
-/* Tagline under CSC logo */
-.logo-tagline {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin: 4px 0 8px;
-  text-align: center;
-}
-
-
-/* --- Muted, smaller footer --- */
-.site-footer{
-  font-size:.875rem;
-  color:#666;
-  text-align:center;
-  padding:1.25rem 0;
-  border-top:1px solid #e0e0e0;
-}
-
-
-
-/* ==========================
-   Project Index Option 1 Clickability
-   ========================== */
-
-.thumb-card {
-  display: block;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-  cursor: pointer;
-  background: #fff;
-  position: relative;
-}
-
-.thumb-card img {
-  transition: opacity .15s ease;
-  border-radius: 6px 6px 0 0;
-}
-
-.thumb-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.15);
-  border-color: #0a68cc;
-  background: #f9fbff;
-}
-
-.thumb-card:hover img {
-  opacity: .9;
-}
-
-.thumb-card:hover h3,
-.thumb-card:hover p {
-  text-decoration: underline;
-}
-
-/* Badge in corner to scream "click me" */
-.thumb-card::after {
-  content: "Click to open";
-  position: absolute;
-  top: 8px; right: 8px;
-  font-size: .72rem; font-weight: 600;
-  background: #0a68cc; color: #fff;
-  padding: 4px 8px; border-radius: 999px;
-  opacity: .9;
-  pointer-events: none;
-}
-
-/* Brand intro band - unified blue theme */
+/* ===== Brand intro band (centered, ALL BLUE) ===== */
 .intro-band {
   background:#f7f7fb;
   padding:2rem 0;
   border-top:1px solid #eee;
   border-bottom:1px solid #eee;
   text-align:center;
-  color:#2b3c7f; /* set brand blue as default text */
+  color:#2b3c7f;
 }
 .intro-band .container { max-width:980px; }
 .intro-band h2 {
   margin:0 0 .75rem;
   font-size:1.85rem;
   line-height:1.25;
-  color:#2b3c7f; /* ensure headings are blue */
+  color:#2b3c7f;
 }
 .intro-band p {
   margin-left:auto;
   margin-right:auto;
   max-width:70ch;
-  color:#2b3c7f; /* paragraphs blue */
+  color:#2b3c7f;
 }
 .intro-band .btn.btn-secondary {
   background:#fff;
