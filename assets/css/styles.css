@@ -1,247 +1,57 @@
-/* ===== CSC palette ===== */
-:root{
-  --ink:#0b1430;          /* navy */
-  --ink-2:#1a254a;        /* darker navy for borders */
-  --blue:#2b3c7f;         /* accent */
-  --muted:#6b7691;        /* body text */
-  --border:#e6e9f2;       /* hairline */
-  --alt:#f4f6fb;          /* light blue wash */
-  --max:1100px;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSC — Construction Services Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Construction Services Consulting — more than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-/* ===== Base ===== */
-*{ box-sizing:border-box; }
-html,body{ margin:0; font-family:Arial, Helvetica, sans-serif; line-height:1.5; color:var(--ink); background:#fff; }
-a{ color:inherit; }
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
+        <h1>Construction Services Consulting</h1>
+        <p class="lede">More than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.</p>
+      </div>
+    </section>
 
-/* ===== Layout ===== */
-.container{ max-width:var(--max); margin:0 auto; padding:0 24px; }
-.section{ padding:56px 20px; }
+    <!-- INTRO -->
+    <section class="intro-band">
+      <div class="container">
+        <h2>Complex Projects. Delivered with Precision and Safety.</h2>
+        <p>
+          We provide leadership, oversight, and detailed coordination from initial concept through startup. Our role is to ensure projects are delivered on time, on budget, and with uncompromising attention to safety and quality.
+        </p>
+        <p>
+          With expertise across food processing, distribution, commercial, and mixed-use development, CSC works with clients to navigate permitting, design, contractor management, and final turnover to operations.
+        </p>
+        <p style="margin-top:1rem;">
+          <a class="btn btn-secondary" href="/projects/">See Our Projects →</a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-/* ===== Header ===== */
-.site-header{ position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--border); }
-.site-header .container{ display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px 24px; }
-
-/* centered logo, now tinted blue */
-.logo img{
-  display:block;
-  height:36px;
-  margin:0 auto;
-  filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(548%) hue-rotate(191deg) brightness(95%) contrast(92%);
-}
-
-/* nav that matches your HTML: .site-nav */
-.site-nav{
-  display:flex; justify-content:center; align-items:center;
-  gap:28px; padding-bottom:6px;
-  font:600 16px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;
-}
-
-/* pill links, no underline */
-.site-nav a,
-.site-nav a:link,
-.site-nav a:visited{
-  text-decoration:none; color:var(--ink);
-  padding:8px 12px; border-radius:12px; display:inline-block;
-}
-.site-nav a:hover,.site-nav a:focus{ background:rgba(43,60,127,.08); outline:none; }
-.site-nav a[aria-current="page"]{ background:rgba(43,60,127,.12); }
-
-/* single line on phones, swipe if tight */
-@media (max-width:640px){
-  .site-nav{ gap:18px; font-size:15px; white-space:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .site-nav::-webkit-scrollbar{ display:none; }
-}
-
-/* ===== Hero ===== */
-.hero{ text-align:center; padding:64px 20px 40px; border-bottom:1px solid #eef0f3; background:#f9faff; }
-.hero-inner{ max-width:860px; margin:0 auto; }
-.hero-mark{
-  display:block;
-  margin:0 auto 12px;
-  filter: brightness(0) saturate(100%) invert(17%) sepia(55%) saturate(548%) hue-rotate(191deg) brightness(95%) contrast(92%);
-}
-.hero h1{ font-size:2.2rem; margin:8px 0; line-height:1.1; color:var(--blue); font-weight:700; }
-.lede{ max-width:700px; margin:10px auto 0; color:var(--muted); }
-.hero-actions{ margin-top:16px; }
-
-/* ===== Buttons ===== */
-/* Make both buttons match in blue */
-.btn,
-.btn.btn-secondary {
-  display:inline-block;
-  padding:10px 16px;
-  border:1px solid var(--blue);
-  color:var(--blue);
-  border-radius:12px;
-  background:#fff;
-  text-decoration:none;
-  font-weight:600;
-}
-.btn + .btn{ margin-left:8px; }
-.btn:hover,
-.btn.btn-secondary:hover{ background:rgba(43,60,127,.08); }
-
-/* ===== Cards ===== */
-.card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.card{ background:#fff; border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:0 2px 12px rgba(11,20,48,.04); }
-.card h3{ margin:0 0 8px; color:var(--blue); }
-.card p{ margin:0; color:#334; }
-
-/* ===== Alt section background ===== */
-.bg-alt{ background:var(--alt); }
-
-/* ===== Footer ===== */
-.site-footer{ border-top:1px solid var(--border); padding:24px 0; color:#2a2f3e; }
-.site-footer a{ text-decoration:none; border-bottom:1px dotted rgba(11,20,48,.3); }
-.site-footer a:hover{ color:var(--blue); border-bottom-color:var(--blue); }
-
-/* ===== Project thumbs ===== */
-.thumb-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
-@media (max-width:1000px){ .thumb-grid{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:640px){ .thumb-grid{ grid-template-columns:1fr; } }
-.thumb-card{ display:block; background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; transition:transform .06s ease, box-shadow .06s ease; }
-.thumb-card:hover{ transform:translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,.06); }
-.thumb-card img{ display:block; width:100%; height:180px; object-fit:cover; }
-.thumb-card h3{ margin:12px 16px 6px; font-size:1.05rem; color:var(--blue); }
-.thumb-card p{ margin:0 16px 16px; color:var(--muted); }
-
-/* Tagline under CSC logo */
-.logo-tagline {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin: 4px 0 8px;
-  text-align: center;
-}
-
-
-/* --- Muted, smaller footer --- */
-.site-footer{
-  font-size:.875rem;
-  color:#666;
-  text-align:center;
-  padding:1.25rem 0;
-  border-top:1px solid #e0e0e0;
-}
-
-
-
-/* ==========================
-   Project Index Option 1 Clickability
-   ========================== */
-
-.thumb-card {
-  display: block;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-  cursor: pointer;
-  background: #fff;
-  position: relative;
-}
-
-.thumb-card img {
-  transition: opacity .15s ease;
-  border-radius: 6px 6px 0 0;
-}
-
-.thumb-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.15);
-  border-color: #0a68cc;
-  background: #f9fbff;
-}
-
-.thumb-card:hover img {
-  opacity: .9;
-}
-
-.thumb-card:hover h3,
-.thumb-card:hover p {
-  text-decoration: underline;
-}
-
-/* Badge in corner to scream "click me" */
-.thumb-card::after {
-  content: "Click to open";
-  position: absolute;
-  top: 8px; right: 8px;
-  font-size: .72rem; font-weight: 600;
-  background: #0a68cc; color: #fff;
-  padding: 4px 8px; border-radius: 999px;
-  opacity: .9;
-  pointer-events: none;
-}
-
-
-/* ===== Brand intro band (centered, limited width, dark heading, softer body) ===== */
-.intro-band {
-  background:#f7f7fb;
-  padding:2rem 0;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
-  text-align:center;
-}
-.intro-band .container { max-width:980px; }
-.intro-band h2 {
-  margin:0 0 .75rem;
-  font-size:1.85rem;   /* ~30px */
-  line-height:1.25;
-  letter-spacing:.2px;
-  color:#1e2a35;       /* brand dark (not link blue) */
-}
-.intro-band p {
-  margin-left:auto;
-  margin-right:auto;
-  max-width:70ch;      /* readable line length */
-  color:#364254;       /* softer paragraph tone */
-}
-.intro-band .btn { margin-left:auto; margin-right:auto; }
-
-/* (Safety net in case .btn-secondary isn’t outlined everywhere) */
-.btn.btn-secondary {
-  background:#fff;
-  color:#1e2a35;
-  border:1px solid #e0e0e0;
-}
-.btn.btn-secondary:hover {
-  background:#f7f7fb;
-  border-color:#d6d6d6;
-}
-
-
-/* Brand intro band - unified blue theme */
-.intro-band {
-  background:#f7f7fb;
-  padding:2rem 0;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
-  text-align:center;
-  color:#2b3c7f; /* set brand blue as default text */
-}
-.intro-band .container { max-width:980px; }
-.intro-band h2 {
-  margin:0 0 .75rem;
-  font-size:1.85rem;
-  line-height:1.25;
-  color:#2b3c7f; /* ensure headings are blue */
-}
-.intro-band p {
-  margin-left:auto;
-  margin-right:auto;
-  max-width:70ch;
-  color:#2b3c7f; /* paragraphs blue */
-}
-.intro-band .btn.btn-secondary {
-  background:#fff;
-  color:#2b3c7f;
-  border:1px solid #2b3c7f;
-}
-.intro-band .btn.btn-secondary:hover {
-  background:#e8ebf7;
-  border-color:#1f2c5d;
-}
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
