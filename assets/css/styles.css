@@ -176,3 +176,39 @@ a{ color:inherit; }
   opacity: .9;
   pointer-events: none;
 }
+
+
+/* ===== Brand intro band (centered, limited width, dark heading, softer body) ===== */
+.intro-band {
+  background:#f7f7fb;
+  padding:2rem 0;
+  border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
+  text-align:center;
+}
+.intro-band .container { max-width:980px; }
+.intro-band h2 {
+  margin:0 0 .75rem;
+  font-size:1.85rem;   /* ~30px */
+  line-height:1.25;
+  letter-spacing:.2px;
+  color:#1e2a35;       /* brand dark (not link blue) */
+}
+.intro-band p {
+  margin-left:auto;
+  margin-right:auto;
+  max-width:70ch;      /* readable line length */
+  color:#364254;       /* softer paragraph tone */
+}
+.intro-band .btn { margin-left:auto; margin-right:auto; }
+
+/* (Safety net in case .btn-secondary isn’t outlined everywhere) */
+.btn.btn-secondary {
+  background:#fff;
+  color:#1e2a35;
+  border:1px solid #e0e0e0;
+}
+.btn.btn-secondary:hover {
+  background:#f7f7fb;
+  border-color:#d6d6d6;
+}
