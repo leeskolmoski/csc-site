@@ -212,3 +212,36 @@ a{ color:inherit; }
   background:#f7f7fb;
   border-color:#d6d6d6;
 }
+
+
+/* Brand intro band - unified blue theme */
+.intro-band {
+  background:#f7f7fb;
+  padding:2rem 0;
+  border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
+  text-align:center;
+  color:#2b3c7f; /* set brand blue as default text */
+}
+.intro-band .container { max-width:980px; }
+.intro-band h2 {
+  margin:0 0 .75rem;
+  font-size:1.85rem;
+  line-height:1.25;
+  color:#2b3c7f; /* ensure headings are blue */
+}
+.intro-band p {
+  margin-left:auto;
+  margin-right:auto;
+  max-width:70ch;
+  color:#2b3c7f; /* paragraphs blue */
+}
+.intro-band .btn.btn-secondary {
+  background:#fff;
+  color:#2b3c7f;
+  border:1px solid #2b3c7f;
+}
+.intro-band .btn.btn-secondary:hover {
+  background:#e8ebf7;
+  border-color:#1f2c5d;
+}
