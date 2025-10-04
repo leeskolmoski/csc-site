@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Albuquerque, New Mexico · High-Security Government Office ($34,000,000) — CSC</title>
+  <title>Albuquerque, New Mexico · High-Security Government Office — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$34,000,000 Department of the Interior high-security government office in Albuquerque, New Mexico.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=26">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
   <style>
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small{color:#555}
@@ -38,16 +40,10 @@
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>Albuquerque, New Mexico · High-Security Government Office</h1>
         <p class="lede">$34,000,000 Department of the Interior office with advanced security and controlled construction.</p>
-
-        <!-- Restored hero image with safe fallback -->
-        <figure class="hero-photo" style="margin-top:1rem">
-          <img
-            src="/assets/img/projects/albuquerque-high-security-hero.jpg"
-            alt="High-security government office in Albuquerque, New Mexico"
-            loading="lazy" decoding="async"
-            onerror="this.closest('figure')?.remove()"
-            style="width:100%;max-width:100%;border-radius:12px;border:1px solid #e6e6e6">
-        </figure>
+        <img src="/assets/img/projects/nm-2.JPG"
+             alt="Albuquerque high-security facility — hero"
+             style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
+             onerror="this.src='/assets/img/projects/placeholder.jpg'">
       </div>
     </section>
 
@@ -58,7 +54,7 @@
         <p>
           $34,000,000 high-security government office facility for the Department of the Interior in Albuquerque, New Mexico. CSC served as
           Owner’s Representative overseeing design, bid, and construction phases with strict security protocols. Scope included
-          hardened envelope, secure MEP (Mechanical, Electrical, Plumbing) systems, redundant power, and advanced surveillance integration.
+          hardened envelope, secure MEP (Mechanical, Electrical, and Plumbing) systems, redundant power, and advanced surveillance integration.
         </p>
 
         <div class="card-grid" style="margin-top:1rem">
@@ -66,7 +62,7 @@
             <h3>Program Value &amp; Scale</h3>
             <ul class="checklist">
               <li><strong>Facility:</strong> Department of the Interior secure office</li>
-              <li><strong>Value:</strong> <strong>$34,000,000</strong></li>
+              <li><strong>Value:</strong> $34,000,000</li>
               <li><strong>Duration:</strong> ~20 months</li>
             </ul>
           </article>
@@ -87,7 +83,7 @@
               <li>Owner’s Representative, Construction Management support</li>
               <li>Strict procurement and contractor vetting</li>
               <li>Phased security integration</li>
-              <!-- “Zero breaches during execution” removed per request -->
+              <!-- Removed per exception: Zero breaches during execution. -->
             </ul>
           </article>
         </div>
@@ -97,12 +93,24 @@
     <!-- AT-A-GLANCE -->
     <section class="band">
       <div class="container">
-        <h2 style="margin-top:0">At a Glance</h2>
+        <h2 style="margin-top:0">At-a-Glance</h2>
         <div class="facts">
           <div class="fact"><strong>Budget</strong><br><span class="subtle">$34,000,000</span></div>
           <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design, bid, build with security protocols</span></div>
           <div class="fact"><strong>Program</strong><br><span class="subtle">High-security government office</span></div>
           <div class="fact"><strong>Role</strong><br><span class="subtle">Owner’s Representative, Construction Management support</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section bg-alt">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="/assets/img/projects/nm-1.JPG" alt="NM project view 1" loading="lazy">
+          <img src="/assets/img/projects/nm-3.JPG" alt="NM project view 2" loading="lazy">
+          <img src="/assets/img/projects/nm-4.JPG" alt="NM project view 3" loading="lazy">
         </div>
       </div>
     </section>
@@ -116,9 +124,13 @@
         <div class="map-box">
           <div class="map-skeleton" id="mapShell">
             <small>Street View opens in a new tab. Map embed loads only after you click.</small>
+
             <a class="map-btn"
-               href="https://www.google.com/maps/place/4400+Masthead+St+NE,+Albuquerque,+NM+87109/"
-               target="_blank" rel="noopener">Open in Google Maps</a>
+               href="https://www.google.com/maps/place/4400+Masthead+St+NE,+Albuquerque,+NM+87109/@35.165504,-106.5955731,3a,75y,72.9h,101.86t/data=!3m7!1e1!3m5!1sBabl3GqmQ5YlqXQD6wFf5A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.855144120219038%26panoid%3DBabl3GqmQ5YlqXQD6wFf5A%26yaw%3D72.89600272962686!7i16384!8i8192!4m6!3m5!1s0x87227445bfd80409:0x139d6548cdb76642!8m2!3d35.1656075!4d-106.5951471!16s%2Fg%2F11bw3_f4sl?entry=ttu"
+               target="_blank" rel="noopener">
+              Open Street View
+            </a>
+
             <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
           </div>
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
@@ -138,7 +150,7 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click-to-load map
+    // Click-to-load map, no Street View embed
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
