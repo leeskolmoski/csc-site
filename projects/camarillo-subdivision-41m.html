@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Camarillo, California · Industrial Subdivision ($41,000,000) — CSC</title>
+  <title>Camarillo, California · Commercial Subdivision — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="$41,000,000 multi-parcel industrial subdivision development in Camarillo, California.">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=26">
+  <meta name="description" content="$41,000,000 commercial subdivision: 14 office buildings plus single-story individual office building. Managed safety, schedule, QA/QC, and construction from design/engineering through all phases.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+  <style>
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -24,54 +34,42 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
-        <img class="hero-mark" src="../assets/img/logo-short.svg" alt="" height="48">
-        <h1>Camarillo, California · Industrial Subdivision</h1>
-        <p class="lede">$41,000,000 industrial subdivision development across multiple parcels.</p>
-        <!-- keep existing hero photo block here (unchanged) -->
+        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
+        <h1>Camarillo, California · Commercial Subdivision</h1>
+        <p class="lede">$41,000,000 program: 14 office buildings and a single-story individual office building (commercial subdivision).</p>
       </div>
     </section>
 
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
+        <h2>Project Overview</h2>
+        <p>
+          CSC managed onsite safety, construction scheduling, and quality control. We managed construction from design and
+          engineering through all phases of delivery, coordinating trades and inspections to achieve pad and building turnover.
+        </p>
 
-        <div class="card-grid">
-          <article class="card">
-            <h3>Overview</h3>
-            <p>CSC supported entitlement, infrastructure, and pad-ready site delivery.</p>
-          </article>
-          <article class="card">
-            <h3>Scope</h3>
-            <ul class="checklist">
-              <li>Subdivision plans and utilities</li>
-              <li>Roads, drainage, and grading</li>
-              <li>Parcels prepared for vertical development</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Delivery</h3>
-            <ul class="checklist">
-              <li>Owner’s Representative across permitting and civil packages</li>
-              <li>QA/QC management and turnover to developers</li>
-              <li>Agency coordination and inspections</li>
-            </ul>
-          </article>
+        <div class="facts">
+          <div class="fact"><strong>Value</strong><br><span class="subtle">$41,000,000</span></div>
+          <div class="fact"><strong>Program</strong><br><span class="subtle">14 office buildings + single-story individual office</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design → Engineering → Construction (full phase management)</span></div>
+          <div class="fact"><strong>Role</strong><br><span class="subtle">Safety, schedule, and Quality Assurance / Quality Control (QA/QC) management</span></div>
         </div>
+      </div>
+    </section>
 
-        <!-- Facts row in cards -->
-        <div class="card-grid" style="margin-top:1rem">
-          <article class="card">
-            <h3>Program Value</h3>
-            <p>$41,000,000</p>
-          </article>
-          <article class="card">
-            <h3>Location</h3>
-            <p>Camarillo, California</p>
-          </article>
-          <article class="card">
-            <h3>Role</h3>
-            <p>Owner’s Representative</p>
-          </article>
+    <!-- LOCATION (Map only) -->
+    <section class="section">
+      <div class="container">
+        <h2>Location</h2>
+        <p>203 Camarillo Ranch Rd, Camarillo, CA 93102</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Map embed loads only after you click.</small>
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
 
         <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
@@ -84,6 +82,26 @@
       <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Click-to-load Google Map (no Street View, no images)
+    (function(){
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        var addr = encodeURIComponent('203 Camarillo Ranch Rd, Camarillo, CA 93102');
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display = 'block';
+        shell.style.display = 'none';
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
