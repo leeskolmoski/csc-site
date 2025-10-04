@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <title>Kent, Washington · Tech Clean Room — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="$4,600,000 FM and UL approved technology clean room with custom fire protection, mechanical, and electrical systems, including upgrades to existing infrastructure. CSC provided design leadership, budget management, scheduling, and safety program development.">
+  <meta name="description" content="$4,600,000 FM (Factory Mutual) and UL (Underwriters Laboratories) approved technology clean room with custom fire protection, mechanical, and electrical systems, including upgrades to existing infrastructure. CSC provided design leadership, budget management, scheduling, and safety program development.">
   <link rel="stylesheet" href="/assets/css/styles.css?v=24">
   <style>
-    .gallery-grid{display:none} /* no gallery on this project */
+    .gallery-grid{display:none}
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small{color:#555}
@@ -17,7 +17,7 @@
     .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
     .subtle{opacity:.85}
     .band{background:#f7f7fb;padding:2rem 0;margin-top:1rem;border-top:1px solid #eee;border-bottom:1px solid #eee}
-    .hero-thumb{display:none} /* enforce no images in hero */
+    .hero-thumb{display:none}
   </style>
 </head>
 <body>
@@ -34,7 +34,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
@@ -43,19 +42,18 @@
       </div>
     </section>
 
-    <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
         <h2>Project Overview</h2>
         <p>
-          CSC managed the design and delivery of a technology clean room at 6320 S 190th Street in Kent, Washington. Scope included custom fire protection, mechanical, and electrical systems, plus upgrades to the existing MEP infrastructure. Our team coordinated FM and UL approvals, developed and implemented the project-specific safety program, and oversaw permitting, inspections, quality assurance, and phased turnover.
+          CSC managed the design and delivery of a technology clean room at 6320 S 190th Street in Kent, Washington. Scope included custom fire protection, mechanical, and electrical systems, plus upgrades to the existing MEP (Mechanical, Electrical, and Plumbing) infrastructure. Our team coordinated FM and UL approvals, developed and implemented the project-specific safety program, and oversaw permitting, inspections, Quality Assurance / Quality Control (QA/QC), and phased turnover.
         </p>
 
         <div class="card-grid" style="margin-top:1rem">
           <article class="card">
             <h3>Program Value &amp; Scope</h3>
             <ul class="checklist">
-              <li><strong>Value:</strong> <strong>$4,600,000</strong> tenant improvement.</li>
+              <li><strong>Value:</strong> $4,600,000 tenant improvement.</li>
               <li><strong>Facility:</strong> Technology clean room buildout with new FP and MEP systems.</li>
               <li><strong>Schedule:</strong> Permitting, inspections, and phased activities coordinated with ongoing operations.</li>
             </ul>
@@ -84,7 +82,6 @@
       </div>
     </section>
 
-    <!-- AT-A-GLANCE -->
     <section class="band">
       <div class="container">
         <h2 style="margin-top:0">At a Glance</h2>
@@ -97,7 +94,6 @@
       </div>
     </section>
 
-    <!-- LOCATION -->
     <section class="section">
       <div class="container">
         <h2>Location</h2>
@@ -126,14 +122,11 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Click-to-load map (no API key, no automatic requests)
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
       if (!embedBtn || !shell || !target) return;
-
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
         var addr = encodeURIComponent('6320 S 190th St, Kent, WA 98032');
