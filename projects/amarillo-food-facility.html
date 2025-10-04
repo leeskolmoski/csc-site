@@ -38,6 +38,16 @@
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>Amarillo, Texas · Food Production Facility</h1>
         <p class="lede">A modern 206,000&nbsp;ft&sup2; food production plant paired with a temperature-controlled distribution warehouse.</p>
+
+        <!-- Restored hero image with safe fallback -->
+        <figure class="hero-photo" style="margin-top:1rem">
+          <img
+            src="/assets/img/projects/amarillo-food-facility-hero.jpg"
+            alt="Amarillo food production facility"
+            loading="lazy" decoding="async"
+            onerror="this.closest('figure')?.remove()"
+            style="width:100%;max-width:100%;border-radius:12px;border:1px solid #e6e6e6">
+        </figure>
       </div>
     </section>
 
@@ -104,7 +114,7 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click-to-load map (no Street View embed)
+    // Click-to-load map
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
