@@ -38,6 +38,16 @@
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>Albuquerque, New Mexico · High-Security Government Office</h1>
         <p class="lede">$34,000,000 Department of the Interior office with advanced security and controlled construction.</p>
+
+        <!-- Restored hero image with safe fallback -->
+        <figure class="hero-photo" style="margin-top:1rem">
+          <img
+            src="/assets/img/projects/albuquerque-high-security-hero.jpg"
+            alt="High-security government office in Albuquerque, New Mexico"
+            loading="lazy" decoding="async"
+            onerror="this.closest('figure')?.remove()"
+            style="width:100%;max-width:100%;border-radius:12px;border:1px solid #e6e6e6">
+        </figure>
       </div>
     </section>
 
@@ -77,7 +87,7 @@
               <li>Owner’s Representative, Construction Management support</li>
               <li>Strict procurement and contractor vetting</li>
               <li>Phased security integration</li>
-              <!-- Removed “Zero breaches during execution” per request -->
+              <!-- “Zero breaches during execution” removed per request -->
             </ul>
           </article>
         </div>
@@ -106,14 +116,9 @@
         <div class="map-box">
           <div class="map-skeleton" id="mapShell">
             <small>Street View opens in a new tab. Map embed loads only after you click.</small>
-
-            <!-- Working Street View link -->
             <a class="map-btn"
-               href="https://www.google.com/maps/place/4400+Masthead+St+NE,+Albuquerque,+NM+87109/@35.165504,-106.5955731,3a,75y,72.9h,101.86t/data=!3m7!1e1!3m5!1sBabl3GqmQ5YlqXQD6wFf5A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.855144120219038%26panoid%3DBabl3GqmQ5YlqXQD6wFf5A%26yaw%3D72.89600272962686!7i16384!8i8192!4m6!3m5!1s0x87227445bfd80409:0x139d6548cdb76642!8m2!3d35.1656075!4d-106.5951471!16s%2Fg%2F11bw3_f4sl?entry=ttu"
-               target="_blank" rel="noopener">
-              Open Street View
-            </a>
-
+               href="https://www.google.com/maps/place/4400+Masthead+St+NE,+Albuquerque,+NM+87109/"
+               target="_blank" rel="noopener">Open in Google Maps</a>
             <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
           </div>
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
@@ -133,7 +138,7 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click-to-load map, no Street View embed
+    // Click-to-load map
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
