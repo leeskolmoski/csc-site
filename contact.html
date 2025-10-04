@@ -5,34 +5,7 @@
   <title>Contact — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact Construction Services Consulting to discuss your project. Tell us your goals, schedule, budget, and any known constraints.">
-  <!-- Primary stylesheet (absolute) + cache-bust -->
-  <link id="site-css" rel="stylesheet" href="/assets/css/styles.css?v=26">
-  <script>
-    // If the absolute path fails (common on some subpath previews),
-    // fall back to relative path automatically.
-    (function () {
-      function cssLoaded() {
-        try {
-          // Check for our CSS variable defined in :root in styles.css
-          return getComputedStyle(document.documentElement).getPropertyValue('--blue').trim().length > 0;
-        } catch (e) { return false; }
-      }
-      function tryFallback() {
-        var el = document.getElementById('site-css');
-        if (!el) return;
-        // Only fallback once
-        if (el.dataset.fellback === '1') return;
-        el.dataset.fellback = '1';
-        el.href = 'assets/css/styles.css?v=26';
-      }
-      // After a short delay, if CSS variables aren't present, swap href.
-      window.addEventListener('load', function () {
-        setTimeout(function () {
-          if (!cssLoaded()) tryFallback();
-        }, 120);
-      });
-    })();
-  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=26">
 </head>
 <body>
   <header class="site-header">
@@ -57,7 +30,7 @@
       </div>
     </section>
 
-    <!-- INTRO (brand-blue band) -->
+    <!-- INTRO -->
     <section class="intro-band">
       <div class="container">
         <h2>Start a conversation</h2>
@@ -93,10 +66,13 @@
           </article>
         </div>
 
-        <p style="margin-top:1.25rem; text-align:center;">
-          <!-- Replace the mailto with your real address when ready -->
-          <a class="btn btn-secondary" href="mailto:">Email CSC →</a>
-        </p>
+        <div style="margin-top:2rem; text-align:center;">
+          <p>You can reach us directly at:</p>
+          <p>
+            <a class="btn btn-secondary" href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a>
+          </p>
+          <p>(Click to email, or copy and paste the address if you prefer.)</p>
+        </div>
       </div>
     </section>
   </main>
