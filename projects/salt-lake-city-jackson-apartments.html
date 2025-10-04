@@ -70,4 +70,44 @@
             <small>Street View opens in a new tab. Map loads only after click.</small>
 
             <a class="map-btn"
-               href="https://www.google.com/maps/place/274+W+200+S,+Salt+Lake+City,+UT+84101/@40.7649638,-111.8995566,3a,60y,28.85h,101.08t/data=!3m7!1e1!3m5!1sV3KPF0nRBQtti6_CSOzWbQ!2e0!6sht_
+               href="https://www.google.com/maps/place/274+W+200+S,+Salt+Lake+City,+UT+84101/@40.7649638,-111.8995566,3a,60y,28.85h,101.08t/data=!3m7!1e1!3m5!1sV3KPF0nRBQtti6_CSOzWbQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.076486244618891%26panoid%3DV3KPF0nRBQtti6_CSOzWbQ%26yaw%3D28.848738911758737!7i16384!8i8192!4m6!3m5!1s0x8752f503faed5431:0x1d06e6bef68149c!8m2!3d40.7653949!4d-111.8992443!16s%2Fg%2F11xgk6ryx1?entry=ttu"
+               target="_blank" rel="noopener">Open Street View</a>
+
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+        </div>
+
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Click-to-load map
+    (function(){
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        var addr = encodeURIComponent('274 West 200 South, Salt Lake City, UT 84101');
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display = 'block';
+        shell.style.display = 'none';
+      }, { passive: false });
+    })();
+  </script>
+</body>
+</html>
