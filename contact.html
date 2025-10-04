@@ -5,7 +5,34 @@
   <title>Contact — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact Construction Services Consulting to discuss your project. Tell us your goals, schedule, budget, and any known constraints.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=25">
+  <!-- Primary stylesheet (absolute) + cache-bust -->
+  <link id="site-css" rel="stylesheet" href="/assets/css/styles.css?v=26">
+  <script>
+    // If the absolute path fails (common on some subpath previews),
+    // fall back to relative path automatically.
+    (function () {
+      function cssLoaded() {
+        try {
+          // Check for our CSS variable defined in :root in styles.css
+          return getComputedStyle(document.documentElement).getPropertyValue('--blue').trim().length > 0;
+        } catch (e) { return false; }
+      }
+      function tryFallback() {
+        var el = document.getElementById('site-css');
+        if (!el) return;
+        // Only fallback once
+        if (el.dataset.fellback === '1') return;
+        el.dataset.fellback = '1';
+        el.href = 'assets/css/styles.css?v=26';
+      }
+      // After a short delay, if CSS variables aren't present, swap href.
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          if (!cssLoaded()) tryFallback();
+        }, 120);
+      });
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -67,7 +94,7 @@
         </div>
 
         <p style="margin-top:1.25rem; text-align:center;">
-          <!-- If you have a contact email, replace the address below -->
+          <!-- Replace the mailto with your real address when ready -->
           <a class="btn btn-secondary" href="mailto:">Email CSC →</a>
         </p>
       </div>
