@@ -1,112 +1,150 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>About — CSC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="About Construction Services Consulting — more than 100 years of combined experience from three partners, guiding projects from concept to completion with precision, safety, and care.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=26">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Construction Services Consulting, Inc. is an owner-focused construction management and program support firm delivering food, beverage, industrial, and commercial projects across the U.S. and internationally." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
-      <nav class="site-nav">
-        <a href="/services.html">Services</a>
-        <a href="/about.html" aria-current="page">About</a>
-        <a href="/projects/">Projects</a>
-        <a href="/contact.html">Contact</a>
+  <!-- shared top nav -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="CSC Home">
+        <span class="brand-mask" aria-hidden="true"></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link active" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
-        <h1>About CSC</h1>
-        <p class="lede">More than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.</p>
-      </div>
-    </section>
-
-    <!-- INTRO (brand-blue band) -->
-    <section class="intro-band">
+    <!-- hero-ish intro -->
+    <section class="intro" style="margin-top:18px;">
       <div class="container">
-        <h2>Who we are</h2>
-        <p>
-          CSC was founded by experienced industry leaders who saw the need for an owner-focused partner in the construction process. Our role is to simplify complexity, advocate for the client, and ensure projects are delivered on time, on budget, and to specification.  
-        </p>
-        <p>
-          We free up leadership to focus on operations and future sites, while CSC manages the details — concept to completion — with uncompromising attention to safety and quality.
-        </p>
-      </div>
-    </section>
-
-    <!-- VALUES / APPROACH -->
-    <section class="section">
-      <div class="container">
-        <h2>Our approach</h2>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Precision</h3>
-            <p>Every project is planned, coordinated, and tracked with rigorous detail. We hold contractors, vendors, and ourselves accountable to the schedule and the budget.</p>
-          </article>
-
-          <article class="card">
-            <h3>Safety</h3>
-            <p>We build safety into every stage. From permitting through commissioning, CSC’s protocols ensure compliance and protect both people and operations.</p>
-          </article>
-
-          <article class="card">
-            <h3>Care</h3>
-            <p>Relationships matter. CSC provides clear communication, responsive problem-solving, and a commitment to client priorities throughout the entire process.</p>
-          </article>
+        <div class="intro-inner">
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
+          <p class="intro-sub" style="max-width:650px;">
+            Construction Services Consulting, Inc. (CSC) represents owners on complex work. We coordinate design, contractors, and documentation so projects are delivered safely, on budget, and on schedule.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- SAFETY RECOGNITION -->
-    <section class="intro-band bg-alt">
-      <div class="container">
-        <h2>Proven Safety Leadership</h2>
-        <p>
-          CSC’s leadership has a long history of maintaining exemplary safety performance across major construction programs. 
-          Our commitment to zero incidents is built on decades of field experience and rigorous oversight.
-        </p>
-        <blockquote>
+    <!-- who we are + image -->
+    <section class="page-section">
+      <div class="container" style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+        <article class="card" style="flex:1 1 360px; min-width:280px;">
+          <h2>Who we are</h2>
           <p>
-            “...You have worked 5,542 hours with Zero injuries. This relates to a Recordable Incident Rate (RIR) and a Lost Workday Case Incident Rate (LWCIR) of 0.00.”  
-            <br>— <em>Zurich Services Corporation Risk Engineering Report, December 2006</em>
+            CSC was founded by three partners with decades of construction and owner-side experience across industrial, food and beverage, cold storage, and commercial development. Our work is documentation-first and safety-forward, because many of our clients operate facilities that cannot shut down or accept rework.
           </p>
-        </blockquote>
-        <p style="margin-top:1rem;">
-          <a class="btn btn-secondary" href="/assets/docs/RIR-Opus-West-Wells-Fargo.pdf" target="_blank">
-            View Safety Letter (PDF)
-          </a>
-        </p>
+          <p>
+            We are a family-run, U.S.-based firm that can support domestic and international programs. Our role is to protect the owner’s interests from concept through turnover.
+          </p>
+        </article>
+        <div style="flex:0 0 320px; max-width:340px;">
+          <img src="assets/images/stock/office-collaboration-001.jpg"
+               alt="CSC team collaborating in office over plans"
+               style="width:100%; border-radius:14px; box-shadow:var(--shadow); object-fit:cover; aspect-ratio:16/10;">
+        </div>
       </div>
     </section>
 
-    <!-- CTA band -->
-    <section class="intro-band">
-      <div class="container">
-        <h2>Why CSC?</h2>
-        <p>
-          Because complex projects demand clarity, accountability, and partnership. With more than a century of combined expertise, CSC delivers results you can trust.
-        </p>
-        <p style="margin-top:1rem;">
-          <a class="btn btn-secondary" href="/services.html">Explore Our Services →</a>
-        </p>
+    <!-- how we work -->
+    <section class="page-section" style="padding-top:0;">
+      <div class="container" style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+        <div style="flex:0 0 320px; max-width:340px;">
+          <img src="assets/images/stock/services-construction-coordination-001.jpg"
+               alt="Construction coordination over blueprints"
+               style="width:100%; border-radius:14px; box-shadow:var(--shadow); object-fit:cover; aspect-ratio:16/10;">
+        </div>
+        <article class="card" style="flex:1 1 360px; min-width:280px;">
+          <h2>How we work</h2>
+          <p>
+            CSC fits in where the owner needs a single point of accountability. We help define the program, build the team, manage the design process, and keep contractors coordinated in the field.
+          </p>
+          <ul>
+            <li>Owner’s representation for multi-stakeholder programs</li>
+            <li>Preconstruction, budgeting, and constructability reviews</li>
+            <li>Schedule, cost, and quality tracking</li>
+            <li>Field photo and progress documentation</li>
+            <li>Closeout packages for future maintenance</li>
+          </ul>
+          <p>
+            The goal is simple. Deliver the project in a way that lets the owner operate the facility immediately.
+          </p>
+        </article>
       </div>
     </section>
+
+    <!-- safety & documentation -->
+    <section class="page-section" style="padding-top:0;">
+      <div class="container" style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+        <article class="card" style="flex:1 1 360px; min-width:280px;">
+          <h2>Safety, documentation, and risk</h2>
+          <p>
+            Many of the programs CSC has supported required strict safety, incident reporting, and inspection documentation. Our process centers on building that documentation as the work is being done.
+          </p>
+          <p>
+            For one federal and commercial campus project, Zurich and the carrier recognized the program’s risk management and documentation approach. That report is available below.
+          </p>
+          <p>
+            <a href="assets/docs/RIR-Opus-West-Wells-Fargo.pdf" class="primary-btn" target="_blank" rel="noopener">
+              View Safety / Risk Letter (PDF)
+            </a>
+          </p>
+        </article>
+        <div style="flex:0 0 320px; max-width:340px;">
+          <img src="assets/images/stock/safety-gear-locker-001.jpg"
+               alt="Safety gear and high-visibility jackets in locker area"
+               style="width:100%; border-radius:14px; box-shadow:var(--shadow); object-fit:cover; aspect-ratio:16/10;">
+        </div>
+      </div>
+    </section>
+
+    <!-- partnerships -->
+    <section class="page-section" style="padding-top:0;">
+      <div class="container" style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+        <div style="flex:0 0 320px; max-width:340px;">
+          <img src="assets/images/stock/handshake-partnership-001.jpg"
+               alt="Partnership handshake"
+               style="width:100%; border-radius:14px; box-shadow:var(--shadow); object-fit:cover; aspect-ratio:16/10;">
+        </div>
+        <article class="card" style="flex:1 1 360px; min-width:280px;">
+          <h2>Partnerships and repeat work</h2>
+          <p>
+            Much of CSC’s work comes from repeat clients, related companies, or international partners who need an experienced U.S. owner’s representative to help execute programs here.
+          </p>
+          <p>
+            The website refresh you are building now is to support those partnerships, to show consistent design, original content, and photo backed projects so overseas and domestic stakeholders can verify CSC’s capabilities quickly.
+          </p>
+        </article>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
