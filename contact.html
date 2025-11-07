@@ -5,83 +5,100 @@
   <title>Contact — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact Construction Services Consulting to discuss your project. Tell us your goals, schedule, budget, and any known constraints.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=26">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
-      <nav class="site-nav">
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="/projects/">Projects</a>
-        <a href="/contact.html" aria-current="page">Contact</a>
+  <!-- shared top nav -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="CSC Home">
+        <span class="brand-mask"></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
-        <h1>Contact CSC</h1>
-        <p class="lede">Tell us about your project and we’ll map the path from concept to completion.</p>
+    <!-- intro like other pages -->
+    <section class="intro" style="margin-top:18px;">
+      <div class="container">
+        <div class="intro-inner">
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
+          <p class="intro-sub" style="max-width:640px;">
+            Tell us about your project and we will map the path from concept to completion.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- INTRO -->
-    <section class="intro-band">
+    <!-- start a conversation -->
+    <section class="page-section">
       <div class="container">
-        <h2>Start a conversation</h2>
-        <p>
-          To help us respond quickly and accurately, share your goals, target schedule, budget range, scope highlights, location, and any known constraints (utilities, permitting, site access, supply chain, or operational windows).
-        </p>
-      </div>
-    </section>
+        <div class="card" style="margin-bottom:18px;">
+          <h2>Start a conversation</h2>
+          <p>
+            To help us respond quickly and accurately, share your goals, target schedule, budget range, scope highlights, location, and any known constraints (utilities, permitting, site access, supply chain, or operational windows).
+          </p>
+        </div>
 
-    <!-- DETAILS -->
-    <section class="section">
-      <div class="container">
-        <div class="card-grid">
-          <article class="card">
+        <!-- three cards like old site -->
+        <div style="display:flex; gap:18px; flex-wrap:wrap;">
+          <article class="card" style="flex:1 1 280px;">
             <h3>What to include</h3>
             <ul>
               <li>Project type and objectives</li>
-              <li>Location and desired start/finish dates</li>
+              <li>Location and desired start or finish dates</li>
               <li>Budget range and funding approach</li>
               <li>Key stakeholders and decision timeline</li>
               <li>Any known constraints or risks</li>
             </ul>
           </article>
 
-          <article class="card">
+          <article class="card" style="flex:1 1 280px;">
             <h3>What to expect</h3>
-            <p>We’ll review your information, identify the fastest compliant path, and outline next steps — whether that’s due diligence, design coordination, procurement planning, or permitting strategy.</p>
+            <p>
+              We will review your information, identify the fastest compliant path, and outline next steps. That could be due diligence, design coordination, procurement planning, or permitting strategy.
+            </p>
           </article>
 
-          <article class="card">
+          <article class="card" style="flex:1 1 280px;">
             <h3>Next steps</h3>
-            <p>After our initial call, CSC can prepare a tailored scope and engagement plan. We can act as your Owner’s Representative, provide Construction Management (CM) support, or build a hybrid model for your program.</p>
+            <p>
+              After our initial call, CSC can prepare a tailored scope and engagement plan. We can act as your Owner’s Representative, provide Construction Management (CM) support, or build a hybrid model for your program.
+            </p>
           </article>
         </div>
 
         <div style="margin-top:2rem; text-align:center;">
           <p>You can reach us directly at:</p>
           <p>
-            <a class="btn btn-secondary" href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a>
+            <a class="primary-btn" href="mailto:info@intl-cscinc.com">info@intl-cscinc.com</a>
           </p>
-   
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
