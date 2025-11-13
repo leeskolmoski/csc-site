@@ -5,7 +5,7 @@
   <title>San Bernardino, California · Wells Fargo Development — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Wells Fargo Development in San Bernardino, California: high-security office support, dual parking structures, ground-up Panera Bread, retail shell, clean-room tenant improvement, and miscellaneous retail.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+  <link rel="stylesheet" href="../css/styles.css">
   <style>
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
     .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
@@ -21,29 +21,37 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
-      <nav class="site-nav">
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="/projects/" aria-current="page">Projects</a>
-        <a href="/contact.html">Contact</a>
+
+  <!-- Top bar (new site format) -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" style="margin-top:18px;">
       <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
+        <img class="hero-mark" src="../assets/images/main/logo-short.svg" alt="" height="48">
         <h1>San Bernardino, California · Wells Fargo Development</h1>
         <p class="lede">
           Multi-scope program: high-security office support, dual parking structures, ground-up Panera Bread,
-          multi-tenant retail shell, clean-room tenant improvement, and additional retail units.
+          multi-tenant retail shell, clean-room tenant improvement, and additional retail.
         </p>
-        <img src="/assets/img/projects/wells-fargo-ps-3a.png"
+        <img src="../assets/images/projects/wells-fargo-ps-3a.png"
              alt="Wells Fargo San Bernardino — main building"
              style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6">
       </div>
@@ -117,15 +125,13 @@
         <h2>Parking Structures (photos available)</h2>
         <div class="gallery-grid">
           <img
-            src="/assets/img/projects/wells-fargo-ps-1-new.jpg"
+            src="../assets/images/projects/wells-fargo-ps-1-new.jpg"
             alt="Wells Fargo San Bernardino parking structure, view 1"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/leeskolmoski/csc-site/main/assets/img/projects/wells-fargo-ps-1-new.jpg';">
+            loading="lazy">
           <img
-            src="/assets/img/projects/wells-fargo-ps-2-new.jpg"
+            src="../assets/images/projects/wells-fargo-ps-2-new.jpg"
             alt="Wells Fargo San Bernardino parking structure, view 2"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/leeskolmoski/csc-site/main/assets/img/projects/wells-fargo-ps-2-new.jpg';">
+            loading="lazy">
         </div>
       </div>
     </section>
@@ -145,19 +151,22 @@
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
 
-        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
+  <script src="../js/config.js" defer></script>
+  <script src="../js/app.js" defer></script>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // year stamp for legacy footer if needed elsewhere
+    (function(){var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();})();
 
     // Click-to-load embed (no API key, no cost)
     const USE_STREET_VIEW_EMBED = false;
@@ -172,7 +181,7 @@
 
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
-        let src;
+        var src;
         if (USE_STREET_VIEW_EMBED && SV_LAT && SV_LNG) {
           src = 'https://www.google.com/maps?layer=c&cbll=' + SV_LAT + ',' + SV_LNG + '&output=embed';
         } else {
